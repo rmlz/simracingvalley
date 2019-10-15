@@ -83,6 +83,11 @@ If you have any doubt about the code, I may help you as I'm not creating a full 
 
 Servercontrol.py contains the "automation bot" that will start servers, save race data to database and finish it. **This way you can save an entire agenda of automated servers that will start and end after saving racing results!** It's just **AWESOME!!**
 
+To access a fake admin account use:
+
+* username: RmLZ (case sensitive)
+* password: 12345678910
+
 ### Features
 * Player account and personal profile;
 * Accounts are STEAM-linked;
