@@ -1,0 +1,409 @@
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113819959-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113819959-1');
+    </script>
+
+    {% if current_user.is_authenticated == true %}
+      {% if current_user.user_obj()['sponsor'] == false %}
+      <script> console.log('APOIE O SIMRACING VALLEY')</script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2262399589748995",
+            enable_page_level_ads: true
+       });
+      </script>
+      {% else %}
+      {% endif %}
+      {% else %}
+      <script> console.log('APOIE O SIMRACING VALLEY')</script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2262399589748995",
+            enable_page_level_ads: true
+       });
+      </script>
+      {% endif %}
+		<title>Simracing Valley - Tornando o AV Brasileiro cada vez mais forte</title>
+		<meta charset="utf-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<meta name="robots" content="index, follow" >
+		<meta name="keywords" content="HTML5 Template" >
+		<meta name="description" content="Simracing Valley - Tornando o AV Brasileiro cada vez mais forte" >
+		<meta name="author" content="Vladimir Azarushkin">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#2a2b2f">
+
+		<!-- FAVICONS -->
+    <link rel="shortcut icon" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="192x192" href="images/favicon/icon-192x192.png">
+
+<!-- CSS -->
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,300%7COpen+Sans:400,300,700" rel="stylesheet" type="text/css">
+
+    <!-- REVOSLIDER CSS SETTINGS -->
+
+    <!-- ANGULAR SETTINGS FILES -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+    <script src='static/js/app.js'></script>
+    <script src='static/js/dirPagination.js'></script>
+
+    <!-- REVOLUTION STYLE SHEETS -->
+    <link href="static/revo-slider/css/settings-custom.css" rel="stylesheet" type="text/css">
+
+    <!-- REVOLUTION NAVIGATION STYLES -->
+    <link rel="stylesheet" type="text/css" href="static/revo-slider/css/navigation-skins/hermes-custom.css">
+
+    <!-- BOOTSTRAP -->
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+    <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->
+		<link rel="stylesheet" href="static/css/icons-fonts.css" >
+
+    <!-- CSS THEME -->
+		<link rel="stylesheet" href="static/css/style.css" >
+
+    <!-- ANIMATE -->
+		<link rel="stylesheet" href="static/css/animate.min.css">
+
+    <!-- IE Warning CSS -->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie-warning.css" ><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie8-fix.css" ><![endif]-->
+
+    <!-- Magnific popup, Owl Carousel Assets in style.css -->
+
+<!-- CSS end -->
+
+<!-- JS begin some js files in bottom of file-->
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    <style>
+    /* Outer */
+      .popup {
+      width:100%;
+      height:100%;
+      display:none;
+      position:fixed;
+      top:0px;
+      left:0px;
+      background:rgba(0,0,0,0.75);
+      }
+      /* Inner */
+      .popup-inner {
+      max-width:700px;
+      width:90%;
+      padding:40px;
+      position:absolute;
+      top:50%;
+      left:50%;
+      -webkit-transform:translate(-50%, -50%);
+      transform:translate(-50%, -50%);
+      box-shadow:0px 2px 6px rgba(0,0,0,1);
+      border-radius:3px;
+      background:#fff;
+      }
+      /* Close Button */
+      .popup-close {
+      width:30px;
+      height:30px;
+      padding-top:4px;
+      display:inline-block;
+      position:absolute;
+      top:0px;
+      right:0px;
+      transition:ease 0.25s all;
+      -webkit-transform:translate(50%, -50%);
+      transform:translate(50%, -50%);
+      border-radius:1000px;
+      background:rgba(0,0,0,0.8);
+      font-family:Arial, Sans-Serif;
+      font-size:20px;
+      text-align:center;
+      line-height:100%;
+      color:#fff;
+      }
+      .popup-close:hover {
+      -webkit-transform:translate(50%, -50%) rotate(180deg);
+      transform:translate(50%, -50%) rotate(180deg);
+      background:rgba(0,0,0,1);
+      text-decoration:none;
+      }
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }   
+
+      input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      </style>
+      <header id="nav" class="header header-1 no-transparent mobile-no-transparent">
+
+          {% include 'header.html' %}
+           <div class="header-wrapper">
+            <div class="container-m-30 clearfix">
+              <div class="logo-row">
+
+            <!-- LOGO -->
+                <div class="logo-container-2">
+                  <div class="logo-2">
+                    <a href="http://www.simracingvalley.com" class="clearfix">
+                      <img src="static/images/logo.png" class="logo-img" alt="Logo">
+                    </a>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+          <!-- MAIN MENU CONTAINER -->
+          <div class="main-menu-container">
+            <div class="container-m-30 clearfix">
+              <!-- MAIN MENU -->
+              <div id="main-menu" >
+                 <nav class="navbar navbar-default">
+
+                    <!-- MAIN MENU LIST -->
+                    <nav class="collapse collapsing navbar-collapse right-1024">
+                      <ul class="nav navbar-nav">
+
+                        <!-- MENU ITEM -->
+                        <!--<div class="main-menu-container">-->
+
+                          <div class="container-m-30 clearfix">
+
+                              <!-- MAIN MENU -->
+                             <div id="main-menu">
+                                <div class="navbar navbar-default" role="navigation">
+
+
+
+          <!-- END header-wrapper -->
+
+        </header>
+	</head>
+	<body>
+    <div class='container'>
+<div class="col-lg-4 col-md-offset-4 form-group" style="margin-top: 12%">
+  {% if scheduled_race_before == true %}
+    <form action="{{ url_for('schedulerace') }}" method="POST">
+      <dl>
+        {{ form2.csrf_token }}
+        <dt>Você já tem uma corrida marcada. {{form2.delete.label}}</dt>
+        <dt>{{form2.delete}}
+        <dt>{{form2.submitdelete}}</dt>
+        {% endif %}
+
+               <div class="bg-yellow">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div>{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+              </div>
+              <div class="bg-yellow">
+              {% for field in form.errors %}
+              {% for error in form.errors[field] %}
+              <div>{{ error }}</div>
+              {% endfor %}
+              {% endfor %}
+              </div>
+                  
+              <form action="{{ url_for('schedulerace') }}" method="POST">
+                <dl>
+
+                 {{ form.csrf_token }}
+                 <dt>{{ form.track.label }}:</dt>
+                 <dd>{{ form.track(class_="form-control") }} </dd>
+
+                 <dt>{{ form.car.label }}:</dt>
+                 <dd>{{ form.car(class_="form-control") }} </dd>
+
+                 <dt>{{ form.date.label }}:</dt>
+                 <dd>{{ form.date(class_="form-control") }} </dd>
+
+                 <dt>{{ form.time.label }}:</dt>
+                 <dd>{{ form.time(class_="form-control") }} </dd>
+                 <hr>
+                 <dt>{{ form.traction.label }}:</dt>
+                 <dd>{{ form.traction(class_="form-control") }} </dd>
+
+                 <dt>{{ form.antilock.label }}:</dt>
+                 <dd>{{ form.antilock(class_="form-control") }} </dd>
+
+                 <dt>{{ form.stability.label }}:</dt>
+                 <dd>{{ form.stability(class_="form-control") }} </dd>
+
+                 <dt>{{ form.gear.label }}:</dt>
+                 <dd>{{ form.gear(class_="form-control") }} </dd>
+
+                 <dt>{{ form.clutch.label }}:</dt>
+                 <dd>{{ form.clutch(class_="form-control") }} </dd>
+
+                 <dt>{{ form.invulnerability.label }}:</dt>
+                 <dd>{{ form.invulnerability(class_="form-control") }} </dd>
+
+                 <dt>{{ form.opposite.label }}:</dt>
+                 <dd>{{ form.opposite(class_="form-control") }} </dd>
+
+                 <dt>{{ form.steering.label }}:</dt>
+                 <dd>{{ form.steering(class_="form-control") }} </dd>
+
+                 <dt>{{ form.breakhelp.label }}:</dt>
+                 <dd>{{ form.breakhelp(class_="form-control") }} </dd>
+
+                 <dt>{{ form.spinhelp.label }}:</dt>
+                 <dd>{{ form.spinhelp(class_="form-control") }} </dd>
+
+                 <dt>{{ form.autopit.label }}:</dt>
+                 <dd>{{ form.autopit(class_="form-control") }} </dd>
+
+                 <dt>{{ form.autolift.label }}:</dt>
+                 <dd>{{ form.autolift(class_="form-control") }} </dd>
+
+                 <dt>{{ form.autoblip.label }}:</dt>
+                 <dd>{{ form.autoblip(class_="form-control") }} </dd>
+
+                 <dt>{{ form.driveline.label }}:</dt>
+                 <dd>{{ form.driveline(class_="form-control") }} </dd>
+                 <hr>
+
+                 <dt>{{ form.maxplayers.label }}:</dt>
+                 <dd>{{ form.maxplayers(class_="form-control") }} </dd>
+
+                 <dt>{{ form.ip.label }}:</dt>
+                 <dd>{{ form.ip(class_="form-control") }} </dd>
+                 
+                 <dt>{{ form.password.label }}:</dt>
+                 <dd>{{ form.password(class_="form-control") }} </dd>
+
+                 <hr>
+                 <dt>{{ form.turnwarmup.label }}:</dt>
+                 <dd>{{ form.turnwarmup(class_="form-control") }} </dd>
+
+                 <dt>{{ form.racefinish.label }}:</dt>
+                 <dd>{{ form.racefinish(class_="form-control") }} </dd>
+
+                 <dt>{{ form.starttype.label }}:</dt>
+                 <dd>{{ form.starttype(class_="form-control") }} </dd>
+
+                 <dt>{{ form.practice.label }}:</dt>
+                 <dd>{{ form.practice(class_="form-control") }} </dd>
+
+                 <dt>{{ form.qualify.label }}:</dt>
+                 <dd>{{ form.qualify(class_="form-control") }} </dd>
+
+                 <dt>{{ form.qualylaps.label }}:</dt>
+                 <dd>{{ form.qualylaps(class_="form-control") }} </dd>
+
+                 <dt>{{ form.warmuptime.label }}:</dt>
+                 <dd>{{ form.warmuptime(class_="form-control") }} </dd>
+                 
+                 <dt>{{ form.racetime.label }}:</dt>
+                 <dd>{{ form.racetime(class_="form-control") }} </dd>
+                 
+                 <dt>{{ form.racelaps.label }}:</dt>
+                 <dd>{{ form.racelaps(class_="form-control") }} </dd>
+
+                 <dt>{{ form.starthour.label }}:</dt>
+                 <dd>{{ form.starthour(class_="form-control") }} </dd>
+                 
+                 <dt>{{ form.startminute.label }}:</dt>
+                 <dd>{{ form.startminute(class_="form-control") }} </dd>
+                 <hr>
+                 <dt>{{ form.rules.label }}:</dt>
+                 <dd>{{ form.rules(class_="form-control") }} </dd>
+                 
+                 <dt>{{ form.tireset.label }}:</dt>
+                 <dd>{{ form.tireset(class_="form-control") }} </dd>
+
+                 <dt>{{ form.carview.label }}:</dt>
+                 <dd>{{ form.carview(class_="form-control") }} </dd>
+
+                 <dt>{{ form.fixsetup.label }}:</dt>
+                 <dd>{{ form.fixsetup(class_="form-control") }} </dd>
+
+                 <dt>{{ form.fueltire.label }}:</dt>
+                 <dd>{{ form.fueltire(class_="form-control") }} </dd>
+
+                 <dt>{{ form.pitreturn.label }}:</dt>
+                 <dd>{{ form.pitreturn(class_="form-control") }} </dd>
+
+                 <dt>{{ form.mechfailure.label }}:</dt>
+                 <dd>{{ form.mechfailure(class_="form-control") }} </dd>
+
+                 <dt>{{ form.damage.label }}:</dt>
+                 <dd>{{ form.damage(class_="form-control") }} </dd>
+
+                 <dt>{{ form.fixupgrade.label }}:</dt>
+                 <dd>{{ form.fixupgrade(class_="form-control") }} </dd>
+
+                 <dt>{{ form.privatequaly.label }}:</dt>
+                 <dd>{{ form.privatequaly(class_="form-control") }} </dd>
+
+                 <dt>{{ form.timescale.label }}:</dt>
+                 <dd>{{ form.timescale(class_="form-control") }} </dd>
+
+                 <dt>{{ form.trackcond.label }}:</dt>
+                 <dd>{{ form.trackcond(class_="form-control") }} </dd>
+
+                 <dt>{{ form.trackprogress.label }}:</dt>
+                 <dd>{{ form.trackprogress(class_="form-control") }} </dd>
+                 
+                 
+                 <hr>
+                 <dt>{{ form.downstream.label }}:</dt>
+                 <dd>{{ form.downstream(class_="form-control") }} </dd>
+
+                 <dt>{{ form.upstream.label }}:</dt>
+                 <dd>{{ form.upstream(class_="form-control") }} </dd>
+                 <dt>{{ form.public.label }}:</dt>
+                 <dd>{{ form.public(class_="form-control") }} </dd>
+                 {% if user.admin == true %}
+                 <dt>{{ form.official.label }}:</dt>
+                 <dd>{{ form.official(class_="form-control") }} </dd>
+                 <dt>{{ form.cdc.label }}:</dt>
+                 <dd>{{ form.cdc(class_="form-control") }} </dd>
+                 {% endif %}
+                 <br>
+                 <dt>{{ form.registerrace }}</dt>
+                
+            </div>
+          </div>
+        </body>
+</html>

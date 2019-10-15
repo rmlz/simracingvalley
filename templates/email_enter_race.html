@@ -1,0 +1,88 @@
+<h1>Olá {{user.username}},</h1>
+<p>Você se inscreveu para a seguinte corrida!</p>
+<ul>
+	<li><strong>Pista:</strong> {{ race.track }}</li>
+	<li><strong>Carro:</strong> {{ race.car }}</li>
+	<li><strong>Data:</strong> {{race.date}} {{race.time}}</li>
+	
+</ul>
+<p>Os seguintes pilotos estão inscritos até o exato momento</p>
+<ul>
+	{% for participant in participants %}
+	<li>
+		{{ participant.username }}
+	</li>
+		{% endfor %}
+</ul>
+<h2>Os dados do servidor se encontram abaixo:</h2>
+<table>
+	<tr>
+		<th>Setup Fixo:</th>
+		<td>{{race.fixsetup}}</td>
+	</tr>
+	<tr>
+		<th>Visão do Piloto:</th>
+		<td>{{race.carview}}</td>
+	</tr>
+	<tr>
+		<th>Intensidade do dano:</th>
+		<td>{{race.damage}}</td>
+	</tr>
+	<tr>
+		<th>Ajudas:</th>
+		<td>{{race.helps}}</td>
+	</tr>
+	<tr>
+		<th>Consumo de Pneus e Combustível:</th>
+		<td>{{race.fueltire}}</td>
+	</tr>
+	<tr>
+		<th>Jogos de Pneus disponíveis:</th>
+		<td>{{race.tiresets}}</td>
+	</tr>
+	<tr>
+		<th>Emborrachamento da Pista:</th>
+		<td>{{race.trackcond}}</td>
+	</tr>
+	<tr>
+		<th>Progressão do Emborrachamento:</th>
+		<td>{{race.trackprogress}}</td>
+	</tr>
+	<tr>
+		<th>Regras:</th>
+		<td>{{race.rules}}</td>
+	</tr>
+	<tr>
+		<th>Largada:</th>
+		<td>{{race.starttype}}</td>
+	</tr>
+	<tr>
+		<th>Horário Virtual</th>
+		<td>{{race.starttime}}</td>
+	</tr>
+	<tr>
+		<th>Practice</th>
+		<td>{{race.session[0]}} minutos</td>
+	</tr>
+	<tr>
+		<th>Qualify</th>
+		<td>{{race.session[1]}} minutos</td>
+	</tr>
+	<tr>
+		<th>Race</th>
+		<td>{{race.session[2]}} minutos</td>
+	</tr>
+
+	
+</table>
+
+<h3>Utilize o IP: {{race.ip}} e SENHA: "{{race.password}}" para conectar ao Servidor na data {{race.date}} {{race.time}}</h3>
+<p>Não passe informação dos servidores SIMRACING VALLEY para terceiros! Terceiros que participarem das corridas não poderão ser moderados e ainda influenciarão no ranking da nossa comunidade! Ajude-nos a manter a qualidade de nossas corridas!</p>
+
+
+
+<p>Por precaução, lembre-se de entrar no servidor com antecedência!!</p>
+<p>Considerações</p>
+<p>Ramon Barros - Executivo Simracing Valley</p>
+<p>--</p>
+<p>Dúvidas ou Comentário? Email contato@simracingvalley.com</p>

@@ -1,0 +1,775 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp" lang = "en">
+	
+		<title>Simracing Valley | {{ user.username }} </title>
+		{% include 'head-revelio.html' %}
+	</head>
+	<body class="no-slider">
+	<!-- <body class="has-top-menu"> -->
+		<!-- BEGIN #slider-imgs -->
+		<div id="slider-imgs">
+			<div class="featured-img-box">
+				<div id="featured-img-1" class="featured-img"></div>
+				<div id="featured-img-2" class="featured-img invisible"></div>
+				<div id="featured-img-3" class="featured-img invisible"></div>
+				<div id="featured-img-4" class="featured-img invisible"></div>
+			</div>
+		<!-- END #slider-imgs -->
+		</div>
+
+		{% include 'menu-revelio.html' %}
+				<div id="main-box" class="full-width">
+					
+					<div id="main">
+						
+						<!-- BEGIN .user-profile -->
+						<div class="user-profile">
+							
+							<div class="profile-shadow"></div>
+
+							<!-- BEGIN .profile-left-side -->
+							<div class="profile-left-side">
+
+								<div class="the-profile-top">
+									<div class="profile-user-name">
+										<h1>{{ user.username }}</h1>
+										<!--<div class="sttaa"><span>Última Corrida:</span>"<a href="automobilista/race">"AUTOMOBILISTA: Montana CUP</a>"</div>-->
+									</div>
+
+									<div class="avatar online">
+										<div class="avatar-button">
+											{% if current_user.get_id() ==  userid %}
+											<a href="#" data-popup-open="popup-2"><i class="fa fa-camera-retro"></i>Atualizar Avatar</a>
+											{% endif %}
+										</div>
+
+										<img style="width: 220px; height: 100%;" src="{{user.avatar}}" class="setborder" alt="" />
+									</div>
+									
+
+									<div class="popup" data-popup="popup-2">
+													<div class="popup-inner col-md-6 form-group">
+														<h2>Atualizar Avatar</h2>
+														<p></p>
+														<div>
+											               	
+														                  
+														              <form action="{{ url_for('photoupload', userid=userid) }}" method="POST">
+														                <dl>
+
+														                 {{ form.csrf_token }}
+														          	     <dt>{{ formuploadphoto.photo.label }}</dt>
+														                 <dd>{{ formuploadphoto.photo(class_="form-control", style_="width:100%;") }}</dd>
+														             </dl>
+														                
+														                <button class="btn btn-lg btn-primary btn-block" type="submit">ATUALIZAR AVATAR</button>
+														            </center>
+											            </div>		
+											        </form>
+											        
+
+
+														<a data-popup-close="popup-2" href="#"><button style=" width: 5%; height: 15%;" class="btn btn-sm btn-danger btn-block">FECHAR JANELA</button></a></p>
+														<a class="popup-close" data-popup-close="popup-2" href="#">x</a>
+														
+													</div>
+												</div>
+									<div>
+										<ul class="user-button-list">
+											<li><span class="info-msg"><i>"{{user.phrase}}"</i></span></li>
+										</ul>
+
+										<div class="user-panel-about">
+											<div>
+												<b><i class="fa fa-male"></i>Sobre mim</b>
+												<p>{{ user.about }}</p>
+											</div>
+
+											<div class="user-achievements">
+												<b><i class="fa fa-trophy"></i>Conquistas</b>
+												<p>
+													<span class="ach strike-tooltip" title="Em construção"><i class="fa fa-unlock-alt"></i></span>
+													
+												</p>
+											</div>
+										</div>
+
+										<ul class="user-button-list">
+											<!--<li><a href="messages-write.html" class="defbutton profile-button"><i class="fa fa-comment"></i>Private message</a></li>
+											<li><a href="#" class="defbutton profile-button"><i class="fa fa-coffee"></i>Follow him</a></li>-->
+											{% if current_user.get_id() ==  userid %}
+											<li><a href="#" data-popup-open="popup-1" class="defbutton profile-button disabled"><i class="fa fa-wrench"></i>Editar perfil</a></li>
+											{% endif %}
+											{% if current_user.get_id() !=  userid %}
+											<li><a href="#" class="defbutton profile-button disabled"><i class="fa fa-ban"></i>Reportar esse usuário (Em construção!)</a></li>
+											{% endif %}
+										</ul>
+												<div class="popup" data-popup="popup-1">
+													<div class="popup-inner col-md-6 form-group">
+														<h2>Editar Perfil</h2>
+														<p></p>
+														<div>
+														               
+														                  
+														              <form action="{{ url_for('updateProfile', userid=userid) }}" method="POST">
+														                <dl>
+
+														                 {{ form.csrf_token }}
+														                 <dt>{{ form.phrase.label }}</dt>
+														                 <dd>{{ form.phrase(class_="form-control", style_="width:100%;") }}</dd>
+														                 <dt>{{ form.about.label }}</dt>
+													                	 <dd>{{ form.about(class_="form-control") }}</dd>
+														                 <dt>{{ form.name.label}}</dt>
+													                	 <dd>{{ form.name(class_="form-control") }}</dd>
+														                 <dt>{{ form.lastname.label }}</dt>
+														                 <dd>{{ form.lastname(class_="form-control") }}</dd>
+														                 <dt>{{ form.gender.label }}</dt>
+														                 <dd>{{ form.gender(class_="form-control") }}</dd>
+														                 <dt>{{ form.birthday.label }}</dt>
+														                 <dd>{{ form.birthday(class_="form-control") }}</dd>
+													                	 <dt>{{ form.state.label }}</dt>
+														                 <dd>{{ form.state(class_="form-control") }}</dd>
+														                 <dt>{{ form.city.label }}</dt>
+														                 <dd>{{ form.city(class_="form-control") }}</dd>
+														             </dl>
+														                
+														                <button class="btn btn-lg btn-primary btn-block" type="submit">ATUALIZAR DADOS</button>
+														            </center>
+														        </form>
+											            </div>
+
+
+														<a data-popup-close="popup-1" href="#"><button class="btn btn-sm btn-danger btn-block">FECHAR JANELA</button></a></p>
+														<a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+													</div>
+												</div>
+									</div>
+								</div>
+								
+								<!--<div class="the-profile-navi">
+									<ul class="profile-navi">
+										<li><a href="#top"><span class="left-avatar"><img src="images/photos/avatar-1.jpg" alt="" /></span>Viewing <b>Datcouch</b> profile<br />Back to top<span class="clear-float"></span></a></li>
+										<li class="active"><a href="user-single.html"><i class="fa fa-globe"></i>Profile information</a></li>
+										<li><a href="user-single-guestbook.html"><i class="fa fa-comment-o"></i>Guest book</a></li>
+										<li><a href="user-single-comments.html"><i class="fa fa-comment"></i>My comments</a></li>
+										<li><a href="user-single-blog.html"><i class="fa fa-book"></i>Personal blog</a></li>
+										<li><a href="user-single-music.html"><i class="fa fa-music"></i>Music playlist</a></li>
+										<li><a href="user-single-friends.html"><i class="fa fa-users"></i>Friends<span class="notif">10</span></a></li>
+										<li><a href="user-single-threads.html"><i class="fa fa-comments-o"></i>Forum topics<span class="notif">66</span></a></li>
+										<li><a href="user-single-instagram.html"><i class="fa fa-camera-retro"></i>Instagram photos</a></li>
+									</ul>
+									
+									<div class="profile-panel instagram">
+										<div class="pieces">
+											<a href="https://instagram.com/marcisbee/" target="_blank"><img src="https://scontent-fra.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10576140_778241095547266_331905980_n.jpg" alt="" /></a>
+											<a href="https://instagram.com/marcisbee/" target="_blank"><img src="https://scontent-fra.cdninstagram.com/hphotos-xpa1/outbound-distilleryimage1/t0.0-17/OBPTH/427393eef7af11e2b65722000a9e00be_7.jpg" alt="" /></a>
+											<a href="https://instagram.com/marcisbee/" target="_blank"><img src="https://scontent-fra.cdninstagram.com/hphotos-xpa1/outbound-distilleryimage5/t0.0-17/OBPTH/3259ed5670c711e2a9dd22000a9e29a7_7.jpg" alt="" /></a>
+										</div>
+										<div class="clear-float"></div>
+									</div>
+								</div>-->
+
+							<!-- END .profile-left-side -->
+							</div>
+
+							<!-- BEGIN .profile-right-side -->
+							<div class="profile-right-side">
+								<div>
+							<div style="color: white; background: #f55; width: 100%; font-size: 24px; margin-bottom: 10px; text-align: center;">
+			                {% with messages = get_flashed_messages() %}
+			                {% if messages %}
+			                {% for message in messages %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {% endif %}
+			                {% endwith %}
+			                {%for message in form.phrase.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.about.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.name.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.lastname.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.gender.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.birthday.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.state.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.city.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in formuploadphoto.photo.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in formenterrace.decision.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+
+			                </div>
+			            </div>
+
+								<h2><span>Perfil</span></h2>
+								
+								
+								<!-- BEGIN .content-padding -->
+								<div class="content-padding">
+
+									<!-- BEGIN .info-blocks -->
+									<div class="info-blocks">
+										<ul>
+											<li><a href="#" class="info-block"><b>{{ driver.points }}</b><span>Valley Points</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.incidents }}</b><span>Incident Points</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.pole }}</b><span>Poles</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.races_done }}</b><span>Corridas</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.top3 }}</b><span>Top 3</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.first }}</b><span>Vitórias</span></a></li>
+											
+											
+										</ul>
+										<div class="clear-float"></div>
+									<!-- END .info-blocks -->
+									</div>
+									
+									<div>
+										<div style="width:350px; margin-right: 50%;" class="left">
+											<h2 style="margin-left:-30px;"><span>Informação</span></h2></div>
+										
+											<ul class="profile-info">
+												<li>
+													<span class="first">Nome, Sobrenome:</span>
+													<span class="last">{{ user.name }} {{ user.lastname }}</span>
+												</li>
+												<li>
+													<span class="first">Classe:</span>
+													<span class="elo"><b><img style="max-width: 60%;" src="data:image/png;base64, {{driver.classimg }}"></b></span>
+												<li>
+													<span class="first">Sexo:</span>
+													<span class="last">{{ user.gender }}</span>
+												</li>
+												<li>
+													<span class="first">Data de Nascimento:</span>
+													<span class="last">{{ user.birthday }}</span>
+												</li>
+												<li>
+													<span class="first">Estado, Cidade:</span>
+													<span class="last">{{ user.state }}, {{ user.city }}</span>
+												</li>
+												<li>
+													<span class="first">Cadastrou-se em:</span>
+													<span class="last">{{ driver.signedin }}</span>
+												</li>
+											</ul>
+										
+
+											<div class="clear-float"></div>
+										</div>
+
+										<div style="width:300px;" class="right">
+											
+											<!--<h2 style="margin-left: -30px;"><span>Friends (202)</span></h2>
+											
+											<ul class="profile-friends-list">
+												<li>
+													<a href="user-single.html" class="avatar online user-tooltip">
+														<img src="images/photos/avatar-1.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar online user-tooltip">
+														<img src="images/photos/avatar-2.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar away user-tooltip">
+														<img src="images/photos/avatar-4.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar ingame user-tooltip">
+														<img src="images/photos/avatar-5.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-6.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-7.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-14.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-15.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-16.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-17.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-18.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-19.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+											</ul>
+											<div class="clear-float"></div>
+
+											<a href="user-single-friends.html" class="defbutton"><i class="fa fa-users"></i>View all 202 friends</a>-->
+											
+										</div>
+
+										<div class="clear-float"></div>
+									</div>
+									
+									<!--<div class="photo-blocks">
+										<ul>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments"><span>101</span></span><span class="article-image"><img src="http://distilleryimage10.s3.amazonaws.com/e7b6a2329d6f11e2be5722000a9f15cb_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments inactive"><span>23</span></span><span class="article-image"><img src="http://distilleryimage6.s3.amazonaws.com/74cada18729f11e2beb322000aaa0754_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments"><span>6</span></span><span class="article-image"><img src="http://distilleryimage5.s3.amazonaws.com/948b75cc967311e29b3722000a1fa50e_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments"><span>12</span></span><span class="article-image"><img src="http://distilleryimage11.s3.amazonaws.com/b62786f06ccd11e28a5622000a1fbe35_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments inactive"><span>0</span></span><span class="article-image"><img src="http://distilleryimage8.s3.amazonaws.com/5e7dfe7270b811e286b422000a9d0dd8_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+										</ul>
+										<div class="clear-float"></div>
+									</div>
+									
+									<div>
+										<center>
+											<a href="user-single-instagram.html" class="defbutton"><i class="fa fa-camera-retro"></i>View all instagram photos</a>
+										</center>
+									</div>-->
+									
+									<!-- BEGIN .music-blocks -->
+									<h2 style="margin-right: 50%"><span>Histórico</span></h2>
+									<div ng-controller="HomeCtrl" class="music-blocks">
+										<center>
+											<dl>
+												<dt><canvas id="chart3" width="500" height="400"></canvas></dt>
+								                <dt><canvas id="chart1" width="500" height="400"></canvas></dt>
+								                <dt><canvas id="chart2" width="500" height="400"></canvas></dt>
+											</ul>
+											<div class="clear-float"></div>
+										</center>
+									<!-- END .music-blocks -->
+									</div>
+								
+									
+								<!-- END .content-padding -->
+								</div>
+
+
+								<!--<h2><span>Guest Book</span></h2>-->
+								<!-- BEGIN .content-padding -->
+								<!--<div class="content-padding">
+									
+									<div class="comment-part">
+
+										<!-- BEGIN #comments -->
+										<!--<ol id="comments">
+											<li>
+												<div class="comment-inner">
+													<div class="comment-avatar">
+														<img src="http://1.gravatar.com/avatar/b1c65c520efb9520269584aae4323fae?s=73&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D73&amp;r=G" alt="DatCouch">
+													</div>
+													<div class="comment-content">
+														<div class="comment-header">
+															<h3><a href="#">DatCouch</a></h3>
+														</div>
+														<p>Lorem ipsum dolor sit amet, ea rebum aeterno qui, cum tale dicta nihil id. Ex eam simul altera. Te sea labores persequeris. An suscipit menandri vel, est error nullam dictas ne. Debet instructior ea pri, vis singulis antiopam consulatu ex.</p>
+														<a class="comment-reply-link post-a" href="#"><i class="fa fa-comment"></i><strong>Reply</strong></a>
+														<span class="post-a"><i class="fa fa-calendar-o"></i> May 2, 2014</span>
+													</div>
+												</div>
+												<ul>
+													<li>
+														<div class="comment-inner">
+															<div class="comment-avatar">
+																<img src="http://1.gravatar.com/avatar/b1c65c520efb9520269584aae4323fae?s=73&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D73&amp;r=G" alt="DatCouch">
+															</div>
+															<div class="comment-content">
+																<div class="comment-header">
+																	<h3><a href="#">DatCouch</a></h3>
+																</div>
+																<p>Lorem ipsum dolor sit amet, ea rebum aeterno qui, cum tale dicta nihil id. Ex eam simul altera. Te sea labores persequeris. An suscipit menandri vel, est error nullam dictas ne. Debet instructior ea pri, vis singulis antiopam consulatu ex.</p>
+																<a class="comment-reply-link post-a" href="#"><i class="fa fa-comment"></i><strong>Reply</strong></a>
+																<span class="post-a"><i class="fa fa-calendar-o"></i> May 2, 2014</span>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<div class="comment-inner">
+													<div class="comment-avatar">
+														<img src="http://1.gravatar.com/avatar/b1c65c520efb9520269584aae4323fae?s=73&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D73&amp;r=G" alt="DatCouch">
+													</div>
+													<div class="comment-content">
+														<div class="comment-header">
+															<h3><a href="#">DatCouch</a></h3>
+														</div>
+														<p>Lorem ipsum dolor sit amet, ea rebum aeterno qui, cum tale dicta nihil id. Ex eam simul altera. Te sea labores persequeris. An suscipit menandri vel, est error nullam dictas ne. Debet instructior ea pri, vis singulis antiopam consulatu ex.</p>
+														<a class="comment-reply-link post-a" href="#"><i class="fa fa-comment"></i><strong>Reply</strong></a>
+														<span class="post-a"><i class="fa fa-calendar-o"></i> May 2, 2014</span>
+													</div>
+												</div>
+											</li>
+										<!-- #comment-## -->
+										<!--</ol>
+										<div class="comments-pager"></div>
+
+										<div class="comment-form">
+											<a href="#" name="respond"></a>
+											<div id="respond" class="comment-respond">
+												<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/integer-nam-varius/#respond" style="display:none;">Cancel reply</a></small></h3>
+												<form action="http://chronicles.datcouch.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+													<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							
+													<p class="form-name">
+														<label for="author">Name:<span class="required">*</span></label>
+														<input id="author" name="author" type="text" value="" size="30" aria-required="true" placeholder="Name">
+													</p>
+
+													<p class="form-email">
+														<label for="email">Email:<span class="required">*</span></label>
+														<input id="email" name="email" type="text" value="" size="30" aria-required="true" placeholder="Email">
+													</p>
+
+													<p class="form-website">
+														<label for="website">Website:</label>
+														<input id="website" name="url" type="text" value="" size="30" aria-required="true" placeholder="Website">
+													</p>
+													<p class="form-comment">
+														<label for="comment">Comment:<span class="required">*</span></label>
+														<textarea id="comment" name="comment" type="text" aria-required="true" placeholder="Comment Text"></textarea>
+													</p>
+													<p class="form-submit">
+														<input name="submit" type="submit" id="submit" value="Post Comment" class="button">
+														<input type="hidden" name="comment_post_ID" value="324" id="comment_post_ID" class="button">
+														<input type="hidden" name="comment_parent" id="comment_parent" value="0" class="button">
+													</p>
+												</form>
+											</div><!-- #respond -->
+										<!--</div>
+						
+									</div>-->
+
+
+								<!-- END .content-padding -->
+								<!--</div>-->
+
+							<!-- END .profile-right-side -->
+							</div>
+
+							<div class="clear-float"></div>
+
+						<!-- END .user-profile -->
+						</div>
+
+					</div>
+					
+					<div class="clear-float"></div>
+					
+				</div>
+			</div>
+		</div>
+						
+
+		<div class="popup" data-popup="popup-3">
+			<div class="popup-inner col-md-6 form-group">
+				<h1>Inscrever-se para Corrida</h1>
+				<ul>
+					<li><small><strong>Pista: </strong>{{ scheduledRace.track }}</small></li>
+					<li><small><strong>Carro: </strong>{{ scheduledRace.car }}</small></li>
+					<li><small><strong>Dia & Hora: </strong>{{ scheduledRace.date }} {{ scheduledRace.time }}</small></li>
+
+				</ul>
+				<div>
+	                <div class="user">
+
+	                	<ul>
+	                		{% for participant in scheduledRace.participants %}
+	                		<li class="driver"><a  href="{{ url_for('driver', userid=participant.userid) }} ">{{ participant.username }}</a></li>
+	                		{% endfor %}
+	                		
+	                	</ul>
+	                </div>
+	            </div>
+	                <h2>Definições de Servidor</h2>
+	                <br>
+	                <ul>
+	                	<li><small><strong>Visão do Piloto: </strong>{{ scheduledRace.carview }} </small></li> 
+						<li><small><strong>Regras: </strong>{{ scheduledRace.rules }} </small></li>
+						<li><small><strong>Setup Fixo: </strong>{{ scheduledRace.fixsetup }} </small></li>
+						<li><small><strong>Consumo de Pneus e Combustível: </strong>{{ scheduledRace.fueltire }} </small></li>
+						<li><small><strong>Jogos de Pneus disponíveis: </strong>{{ scheduledRace.tiresets }} </small></li>
+						<li><small><strong>Emborrachamento da Pista: </strong>{{ scheduledRace.trackcond }} </small></li>
+						<li><small><strong>Progressão do Emborrachamento: </strong>{{ scheduledRace.trackprogress }} </small></li>
+						<li><small><strong>Largada: </strong>{{ scheduledRace.starttype }} </small></li>
+						<li><small><strong>Horário: </strong>{{ scheduledRace.starttime }} </small></li>
+						<li><small><strong>Ajudas disponíveis: </strong>{{ scheduledRace.helps }} </small></li>
+						<li><small><strong>Intensidade do dano: </strong>{{ scheduledRace.damage }} </small></li>
+						<li><small><strong>Practice: </strong>{{ scheduledRace.session[0] }} minutos </small></li>
+						<li><small><strong>Qualify: </strong>{{ scheduledRace.session[1] }} minutos</small></li>
+						<li><small><strong>Race: </strong>{{ scheduledRace.session[2] }} minutos </small></li>
+
+					</ul>
+                	<form action="{{ url_for('enterrace') }}" method="POST">
+                		<dl>
+                			{{ formenterrace.csrf_token }}
+                			{{ formenterrace.decision}}
+            			
+
+                		</dl>
+
+                		{% if (scheduledRace.Done == false) and 
+                			   (scheduledRace.Started == false) %}
+                		
+                		<button class="btn btn-lg btn-primary btn-block" type="submit">ENTRAR/SAIR DO EVENTO</button>
+                		
+
+            			{% else %}
+                		
+                		{% endif %}
+                	</form>
+                	</center>
+                	<p><a data-popup-close="popup-3" href="#"><button class="btn btn-sm btn-danger btn-block">FECHAR JANELA</button></a></p>
+														<a class="popup-close" data-popup-close="popup-3" href="#">x</a>
+                </div>
+                
+                
+            </div>
+        
+
+        <div class="popup" data-popup="popup-4">
+			<div class="popup-inner col-md-6 form-group">
+				<h1>Resultados Extra-Oficiais</h1>
+				
+				
+				<div>
+	                <div class="user">
+
+	                	<ul>
+	                		{% for race in raceresult_cursor %}
+	                		<li class="driver"><a  href="{{ url_for('raceresult', raceid=race._id) }} ">{{ race.srvsettings.track }} - {{ race.srvsettings.car }} // {{ race.srvsettings.date }} {{ race.srvsettings.time }}</a></li>
+	                		{% endfor %}
+	                		
+	                	</ul>
+	                </div>
+	            </div>               	
+                	</center>
+                	<p><a data-popup-close="popup-4" href="#"><button class="btn btn-sm btn-danger btn-block">FECHAR JANELA</button></a></p>
+						<a class="popup-close" data-popup-close="popup-4" style="width: 5%; height: 10%;" href="#">x</a>
+                </div>
+                
+                
+            </div>
+        </div>
+			
+		<div class="clear-float"></div>
+		
+		<div class="wrapper">
+			<!-- BEGIN .footer -->
+			{% include 'footer-revelio.html' %}
+			
+		<script>
+ 
+   // bar chart data
+   var ratingData = {
+   labels : [{% for item in ratinglabels %}
+                  "{{item}}",
+              {% endfor %}],
+   datasets : [
+      {
+            label: 'Histórico de Pontos',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            borderColor: "rgba(0,0,160,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in ratingvalues %}
+                      {{item}},
+                    {% endfor %}]
+      },
+      {
+            label: '"Range" de Erro',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            borderColor: "rgba(0,130,130,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in ratingrange %}
+                      {{item}},
+                    {% endfor %}]
+      }]
+   }
+ 
+   // get bar chart canvas
+   var mychart = document.getElementById("chart1").getContext("2d");
+   
+   steps = 10
+   max = 10
+   // draw bar chart
+   var LineChartDemo = new Chart(mychart, {
+        type: 'line',
+        data: ratingData,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        },
+        pan: {
+              // Boolean to enable panning
+              enabled: true,
+
+              // Panning directions. Remove the appropriate direction to disable 
+              // Eg. 'y' would only allow panning in the y direction
+              mode: 'xy'
+          },
+
+          // Container for zoom options
+          zoom: {
+              // Boolean to enable zooming
+              enabled: true,
+
+              // Zooming directions. Remove the appropriate direction to disable 
+              // Eg. 'y' would only allow zooming in the y direction
+              mode: 'xy'}
+      },
+          
+     });
+
+
+// bar chart data
+   var incidentData = {
+   labels : [{% for item in incidentlabels %}
+                  "{{item}}",
+              {% endfor %}],
+   datasets : [
+      {
+            label: 'Média Incidentes por corrida',
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            borderColor: "rgba(255,0,0,0.3)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in incidentaverage %}
+                      {{item}},
+                    {% endfor %}] 
+
+      }]
+   }
+
+    Chart.defaults.global.animationSteps = 50;
+    Chart.defaults.global.tooltipYPadding = 16;
+    Chart.defaults.global.tooltipCornerRadius = 0;
+    Chart.defaults.global.tooltipTitleFontStyle = "normal";
+    Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+    Chart.defaults.global.animationEasing = "easeOutBounce";
+    Chart.defaults.global.responsive = true;
+    Chart.defaults.global.scaleLineColor = "black";
+    Chart.defaults.global.scaleFontSize = 16;
+ 
+   // get bar chart canvas
+   var mysecondchart = document.getElementById("chart2").getContext("2d");
+   
+   steps = 10
+   max = 10
+   // draw bar chart
+   var LineChartDemo = new Chart(mysecondchart, {
+        type: 'line',
+        data: incidentData,
+        scaleOverride: true,
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        }
+      }
+ 
+   });
+
+   var top10Data = {
+   labels : ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', 'Poles'],
+   datasets : [
+      {
+            label: 'TOP 10 & Pole Positions',
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            borderColor: "rgba(120,36,216,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in top10list %}
+                      {{item}},
+                    {% endfor %}] 
+
+      }]
+   }
+ //console.log(top10Data)
+ 
+ var mythirdchart = document.getElementById("chart3").getContext("2d");
+
+ var LineChartDemo = new Chart(mythirdchart, {
+        type: 'radar',
+        data: top10Data,
+        scaleOverride: true,                                                                                                                                                                                                                                 
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        }
+      }
+ 
+   });
+    </script>
+	</body>
+</html>

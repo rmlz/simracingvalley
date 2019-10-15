@@ -1,0 +1,82 @@
+<!-- FOOTER 4 BLACK WITH TWITTER FEED -->
+        <footer id="footer4" class="page-section pt-95 pb-50 footer2-black">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-3 col-sm-3 widget">
+                <div class="logo-footer-cont">
+                  <a href="http://www.simracingvalley.com">
+                    <img class="logo-footer" src="{{ url_for('login') }}static/images/logo-footer-white.png" alt="logo">
+                  </a>
+                </div>
+                <div class="footer2-text-cont">
+                  <address>
+                    Simracing Valley<br>
+                    Reunindo diversão e competição em um só lugar!
+                  </address>
+                </div>
+                <div class="footer2-text-cont">
+                  Contato:<br>
+                  <a class="a-text" href="mailto:contato@simracingvalley.com">contato@simracingvalley.com</a>
+                </div>
+                <!--<div class="footer2-text-cont a-text-main-cont">
+                  <a class="popup-gmaps mfp-plugin font-poppins" href="https://maps.google.com/maps?q=555+California+Street+Building,+California+Street,+San+Francisco,&amp;hl=en&amp;t=v&amp;hnear=555+California+Street+Building,+California+Street,+San+Francisco">Open Map</a>
+                </div> -->
+              </div>
+
+              <div class="col-md-2 col-sm-2 widget">
+                <h4>Menu</h4>
+                <ul class="links-list a-text-cont font-poppins">
+                  <li><a href="{{ url_for('login') }}"> <i class="fa fa-home"></i> Home</a></li>
+                  <li><a href="{{ url_for('showDriverList') }}"><i class="fa fa-list"></i> Ranking</a></li>
+                  <li><a href="{{ url_for('schedulerace') }}"><i class="fa fa-calendar"></i> Marcar corrida</a></li>
+                  <li><a href="{{ url_for('login') }}static/others/Manual_SV.pdf"><i class="fa fa-file-text"></i> Manual SV</a></li>
+                  {% if current_user.get_id() %}
+                    <li><a href="{{ url_for('driver', userid=current_user.get_id()) }}"><i class="fa fa-user"></i> {{ current_user.get_username() }}</a></li>
+                    <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i> SAIR</a></li>
+                  {% endif %}
+                  
+                  
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-3 widget">
+                <h4>Parceiros</h4>
+                <ul class="links-list a-text-cont font-poppins" >
+                  <li><a href="mailto: contato@simracingvalley.com">SEJA UM PARCEIRO!</a></li>
+                </ul>
+              </div>
+
+              <!-- TWITTER FEEDS
+              <div class="col-md-4 col-sm-4 widget">
+                <h4>Recent Tweets</h4>
+                <div id="twitter-feeds"></div>
+              </div>
+
+            </div>-->
+
+            <!-- SUB FOOTER -->
+            <div class="footer2-copy-cont clearfix">
+              <!-- Social Links -->
+              <div class="footer2-soc-a right">
+                <a href="https://www.facebook.com/simracingvalley/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                
+              </div>
+
+              <!-- Copyright -->
+              <div class="left">
+                <a class="footer2-copy" href="" target="_blank">&copy; Simracing Valley - 2018</a>
+              </div>
+
+            </div>
+
+          </div>
+        </footer>
+
+				<!-- BACK TO TOP -->
+				<p id="back-top">
+          <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
+        </p>
+
+			</div><!-- End BG -->
+		</div><!-- End wrap -->

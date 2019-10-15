@@ -1,0 +1,659 @@
+﻿<head>
+    
+    {% if current_user.is_authenticated == true %}
+      {% if current_user.user_obj()['sponsor'] == false %}
+      <script> console.log('APOIE O SIMRACING VALLEY')</script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2262399589748995",
+            enable_page_level_ads: true
+       });
+      </script>
+      {% else %}
+      {% endif %}
+      {% else %}
+      <script> console.log('APOIE O SIMRACING VALLEY')</script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2262399589748995",
+            enable_page_level_ads: true
+       });
+      </script>
+      {% endif %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113819959-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113819959-1');
+    </script>
+
+		<title>Simracing Valley - Reunindo diversão e competição em um só lugar!</title>
+		<meta charset="utf-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<meta name="robots" content="index, follow" >
+		<meta name="keywords" content="HTML5 Template" >
+		<meta name="description" content="Simracing Valley - Tornando o AV Brasileiro cada vez mais forte" >
+		<meta name="author" content="Vladimir Azarushkin">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#2a2b2f">
+
+		<!-- FAVICONS -->
+    <link rel="shortcut icon" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="192x192" href="images/favicon/icon-192x192.png">
+
+<!-- CSS -->
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,300%7COpen+Sans:400,300,700" rel="stylesheet" type="text/css">
+
+    <!-- REVOSLIDER CSS SETTINGS -->
+
+    <!-- ANGULAR SETTINGS FILES -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+    <script src='../static/js/app.js'></script>
+    <script src='../static/js/dirPagination.js'></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-2.2.3.js"
+      integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+    <!-- REVOLUTION STYLE SHEETS -->
+    <link href="../static/revo-slider/css/settings-custom.css" rel="stylesheet" type="text/css">
+
+    <!-- REVOLUTION NAVIGATION STYLES -->
+    <link rel="stylesheet" type="text/css" href="../static/revo-slider/css/navigation-skins/hermes-custom.css">
+
+    <!-- BOOTSTRAP -->
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->
+		<link rel="stylesheet" href="../static/css/icons-fonts.css" >
+
+    <!-- CSS THEME -->
+		<link rel="stylesheet" href="../static/css/style.css" >
+
+    <!-- ANIMATE -->
+		<link rel="stylesheet" href="../static/css/animate.min.css">
+
+    <!-- IE Warning CSS -->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie-warning.css" ><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie8-fix.css" ><![endif]-->
+
+    <!-- Magnific popup, Owl Carousel Assets in style.css -->
+
+<!-- CSS end -->
+
+<!-- JS begin some js files in bottom of file-->
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+<style>
+.parent ~ .cchild {
+  display: none;
+}
+.opened .parent ~ .cchild {
+  display: table-row;
+  background-color? #ebf1ff;
+}
+.parent {
+  cursor: pointer;
+  background-color: #068af7;
+  font-weight: bold;
+  color: #fff;
+}
+
+.opened .cchild {
+  background-color: #ebf1ff;
+}
+.parent > *:last-child {
+  width: 30px;
+}
+.parent i {
+  transform: rotate(0deg);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  margin: -.5rem;
+  padding: .5rem;
+ 
+}
+.opened .parent i.seta {
+  transform: rotate(180deg)
+}
+
+th { 
+  background: #05568c; 
+  color: white; 
+  font-weight: bold; 
+  }
+
+th, tr {
+  text-align: center;
+}
+
+.table {
+  padding: 4px !important; 
+  vertical-align: middle !important;
+}
+a.upvote{
+  color: white;
+}
+a.downvote{
+  color: white;
+}
+a.downvoted {
+  color: red;
+}
+a.upvoted {
+  color: lime;
+}
+a.downvoted:hover {
+  color: white;
+}
+a.upvoted:hover{
+  color: white;
+}
+a.downvote:hover{
+  color: red;
+}
+a.upvote:hover{
+  color: lime;
+}
+i.fa {
+   display: inline-block;
+}
+ a.upvote .upvoted .downvote .downvoted {
+      display:inline-block; /* chrome-fix */
+  }
+
+</style>
+	</head>
+  <header id="nav" class="header header-1 no-transparent mobile-no-transparent">
+  {% include 'header.html' %}
+  <!-- Latest compiled and minified JavaScript -->
+
+  </header>
+  <body>
+    <div class="container">
+    <center>
+      <br>
+      <br>
+      <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div style="background-color: bisque; font-size: larger;"><strong>{{ message }}<strong></div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+    <h1>{% if result.srvsettings.official == true %} 
+      OFICIAL: {% endif %} {{ result.srvsettings.tracks[0] }} - {{ result.srvsettings.cars[0] }} // {{ result.srvsettings.date }} {{ result.srvsettings.time }} </h1>
+    {% if result.rated == true %}
+    <strong>Corrida Marcada por: {% if result.srvsettings.official == true %} OFICIAL 
+      {% else %} <a href="{{ url_for('driver', userid=result.srvsettings.user.id) }}">{{result.srvsettings.user.username}}
+      {% endif %}</a></strong>
+      <br>
+    <small style="color: red;">Corrida Ranqueada!</small>
+    {% else %}
+    <small style="color: red;">Corrida Não Rankeada</small>
+    {% endif %}
+    <div class="">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Largada</th>
+            <th>Fim corrida</th>
+            <th>T. Livre</th>
+            <th>Classificação</th>
+            <th>Voltas Clas.</th>
+            {% if result.srvsettings.warmups[1] == "1" %}
+            <th>Warmup</th>
+            {% endif %}
+            {% if result.srvsettings.racefinishes[1] == "2" or result.srvsettings.racefinishes[1]== "3"  %}
+            <th>Tempo Corrida</th>
+            {% endif %}
+            {% if result.srvsettings.racefinishes[1] == "1" or result.srvsettings.racefinishes[1]== "3"  %}
+            <th>Voltas Corrida</th>
+            {% endif %}
+            <th>Condição Pista</th>
+            <th>Progressão Pista</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: #dedefb70;">
+            <td>{{ result.srvsettings.starttypes[0] }}</td>
+            <td>{{ result.srvsettings.racefinishes[0] }}</td>
+            <td>{{ result.srvsettings.session[0] }}</td>
+            <td>{{ result.srvsettings.session[1] }}</td>
+            <td>{{ result.srvsettings.session[2] }}</td>
+            {% if result.srvsettings.warmups[1] == "1" %}
+            <td>{{ result.srvsettings.session[3] }}</td>
+            {% endif %}
+            {% if result.srvsettings.racefinishes[1] == "2" or result.srvsettings.racefinishes[1]== "3"  %}
+            <td>{{ result.srvsettings.session[4] }}</td>
+            {% endif %}
+            {% if result.srvsettings.racefinishes[1] == "1" or result.srvsettings.racefinishes[1]== "3"  %}
+            <td>{{ result.srvsettings.session[5] }}</td>
+            {% endif %}
+            <td>{{ result.srvsettings.trackconds[0] }}</td>
+            <td>{{ result.srvsettings.trackprogresses[0] }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Dano</th>
+            <th>Setup Fixo</th>
+            <th>Upgrade Fixo</th>
+            {% if result.srvsettings.help[0] != "0" %}
+            <th>C. Tração</th>
+            {% endif %}
+            {% if result.srvsettings.help[1] != "0" %}
+            <th>ABS</th>
+            {% endif %}
+            {% if result.srvsettings.help[2] != "0" %}
+            <th>C. Estabili</th>
+            {% endif %}
+            {% if result.srvsettings.help[3] != "0" %}
+            <th>Auto Marchas</th>
+            {% endif %}
+            {% if result.srvsettings.help[4] != "0" %}
+            <th>Auto Embreagem</th>
+            {% endif %}
+            {% if result.srvsettings.help[5] != "0" %}
+            <th>Invuln</th>
+            {% endif %}
+            {% if result.srvsettings.help[6] != "0" %}
+            <th>Contra Esterço</th>
+            {% endif %}
+            {% if result.srvsettings.help[7] != "0" %}
+            <th>Direção</th>
+            {% endif %}
+            {% if result.srvsettings.help[8] != "0" %}
+            <th>Frenagem</th>
+            {% endif %}
+            {% if result.srvsettings.help[9] != "0" %}
+            <th>Rodada</th>
+            {% endif %}
+            {% if result.srvsettings.help[10] != "0" %}
+            <th>Auto Pit</th>
+            {% endif %}
+            {% if result.srvsettings.help[11] != "0" %}
+            <th>Levantar carro</th>
+            {% endif %}
+            {% if result.srvsettings.help[12] != "0" %}
+            <th>Auto Blip</th>
+            {% endif %}
+            {% if result.srvsettings.help[13] != "0" %}
+            <th>Lin. Direção</th>
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: #dedefb70;">
+            <td>{{ result.srvsettings.damages[0] }}</td>
+            <td>{{ result.srvsettings.fixsetups[0] }}</td>
+            <td>{{ result.srvsettings.fixupgrades[0] }}</td>
+            {% if result.srvsettings.help[0] != "0" %}
+            <td>{{ result.srvsettings.help[0] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[1] != "0" %}
+            <td>{{ result.srvsettings.help[1] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[2] != "0" %}
+            <td>{{ result.srvsettings.help[2] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[3] != "0" %}
+            <td>{{ result.srvsettings.help[3] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[4] != "0" %}
+            <td>{{ result.srvsettings.help[4] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[5] != "0" %}
+            <td>{{ result.srvsettings.help[5] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[6] != "0" %}
+            <td>{{ result.srvsettings.help[6] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[7] != "0" %}
+            <td>{{ result.srvsettings.help[7] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[8] != "0" %}
+            <td>{{ result.srvsettings.help[8] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[9] != "0" %}
+            <td>{{ result.srvsettings.help[9] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[10] != "0" %}
+            <td>{{ result.srvsettings.help[10] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[11] != "0" %}
+            <td>{{ result.srvsettings.help[11] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[12] != "0" %}
+            <td>{{ result.srvsettings.help[12] }}</td>
+            {% endif %}
+            {% if result.srvsettings.help[13] != "0" %}
+            <td>{{ result.srvsettings.help[13] }}</td>
+            {% endif %}
+          </tr>
+        </tbody>
+      </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Max Players</th>
+            <th>Horário Virtual</th>
+            <th>Visão Piloto</th>
+            <th>Regras</th>
+            <th>Consumo Pneus/Comb</th>
+            <th>Falhas Mec.</th>
+            <th>Retorno Pits</th>
+            <th>Escala Tempo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: #dedefb70;">
+            <td>{{ result.srvsettings.maxplayers }}</td>
+            <td>{{ result.srvsettings.starttime[0] }}:{{ result.srvsettings.starttime[1] }}</td>
+            <td>{{ result.srvsettings.carviews[0] }}</td>
+            <td>{{ result.srvsettings.flags[0] }}</td>
+            <td>{{ result.srvsettings.fueltires[0] }}</td>
+            <td>{{ result.srvsettings.mechfailures[0] }}</td>
+            <td>{{ result.srvsettings.pitreturns[0] }}</td>
+            <td>{{ result.srvsettings.timescales[0] }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <br>
+    <h2>Practice // {{ result.practicefilename }}</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>POS</th>
+        <th>Piloto</th>
+        <th>Voltas Completadas</th>
+        <th>Combustível</th>
+        <th>Split1</th>
+        <th>Split2</th>
+        <th>Split3</th>
+        <th>Tempo de Volta</th>
+        <th></th>
+      </tr>
+    </thead>
+    {% for item in practice|sort(attribute='position')  %}
+     <tbody>
+      <tr class="parent">
+        <td>{{ item.position }}</td>
+        <td><a href="{{url_for('driver', userid=item.userid) }}">{{ item.driver }}</a></td>
+        <td> {{ item.laps|length }}
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ item.bestlap }}</td>
+        <td><i class="fa fa-chevron-down seta"></i></td>
+      </tr>
+      {% for lap in item.laps  %}
+      <tr class="cchild">
+        <td>{{lap.position}}</td>
+        <td></td>
+        <td></td>
+        <td>{{lap.fuel}}</td>
+        {% if  lap.bests1 == true %}
+        <td style="color: green" >{{lap.s1}}</td>
+        {% else %}
+        <td>{{lap.s1}}</td>
+        {% endif %}
+        {% if  lap.bests2 == true %}
+        <td style="color: green" >{{lap.s2}}</td>
+        {% else %}
+        <td>{{lap.s2}}</td>
+        {% endif %}
+        {% if  lap.bests3 == true %}
+        <td style="color: green" >{{lap.s3}}</td>
+        {% else %}
+        <td>{{lap.s3}}</td>
+        {% endif %}
+        {% if  lap.bestlap == true %}
+        <td style="color: green" colspan="2">{{lap.laptime}}</td>
+        {% else %}
+        <td colspan="2">{{lap.laptime}}</td>
+        {% endif %}
+      </tr>
+        {% endfor %}
+        </tbody>
+        {% endfor %}
+        </table>
+        
+      
+      
+          
+          <hr>
+
+
+      <br>
+    <h2>Qualify // {{ result.qualifyfilename }}</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>POS</th>
+        <th>Piloto</th>
+        <th>Voltas Completadas</th>
+        <th>Combustível</th>
+        <th>Split1</th>
+        <th>Split2</th>
+        <th>Split3</th>
+        <th>Tempo de Volta</th>
+        <th></th>
+      </tr>
+    </thead>
+    {% for item in qualify|sort(attribute='position')  %}
+     <tbody>
+      <tr class="parent">
+        <td>{{ item.position }}</td>
+        <td><a href="{{url_for('driver', userid=item.userid) }}">{{ item.driver }}</a></td>
+        <td> {{ item.laps|length }}
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ item.bestlap }}</td>
+        <td><i class="fa fa-chevron-down seta"></i></td>
+      </tr>
+      {% for lap in item.laps  %}
+      <tr class="cchild">
+        <tr class="cchild">
+        <td>{{lap.position}}</td>
+        <td></td>
+        <td></td>
+        <td>{{lap.fuel}}</td>
+        {% if  lap.bests1 == true %}
+        <td style="color: green" >{{lap.s1}}</td>
+        {% else %}
+        <td>{{lap.s1}}</td>
+        {% endif %}
+        {% if  lap.bests2 == true %}
+        <td style="color: green" >{{lap.s2}}</td>
+        {% else %}
+        <td>{{lap.s2}}</td>
+        {% endif %}
+        {% if  lap.bests3 == true %}
+        <td style="color: green" >{{lap.s3}}</td>
+        {% else %}
+        <td>{{lap.s3}}</td>
+        {% endif %}
+        {% if  lap.bestlap == true %}
+        <td style="color: green" colspan="2">{{lap.laptime}}</td>
+        {% else %}
+        <td colspan="2">{{lap.laptime}}</td>
+        {% endif %}
+      </tr>
+        {% endfor %}
+        </tbody>
+        {% endfor %}
+        </table>
+          
+          <hr>
+      
+      <h2>Race // {{ result.racefilename }}</h2>
+    <table class="table table-stripped">
+      <thead>
+      <tr>
+        <th>POS</th>
+        <th>PTS</th>
+        <th>GRID</th>
+        <th>Piloto</th>
+        <th>Voltas Lideradas</th>
+        <th>Voltas Completadas</th>
+        <th>Combustível</th>
+        <th>Incidentes</th>
+        <th>Split1</th>
+        <th>Split2</th>
+        <th>Split3</th>
+        <th>Tempo de Volta</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in race|sort(attribute='position') %}
+      <tr class="parent">
+        <td>{{ item.position }}</td>
+        {% if item.delta < 0 %}
+        <td style="color: red"><i class="fa fa-arrow-down"></i>{{ item.delta }}</td>
+        {% else %}
+        <td style="color: lime"><i class="fa fa-arrow-up"></i>{{ item.delta }}</td>
+        {% endif %}
+        <td>{{ item.st_position }}</td>
+        <td><a href="{{url_for('driver', userid=item.userid) }}">{{ item.driver }}</a></td>
+        <td>{{ item.lapsled }} </td>
+        <td> {{ item.laps|length }}
+        </td>
+        <td></td>
+        {% if item.incidents|int >= 2 %}
+        <td style="color: red;"> {{item.incidents}} </td>
+        {% else %}
+        <td style="color: lime;"> {{item.incidents}} </td>
+        {% endif %}
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ item.fulltime }}</td>
+        <td>
+        {% if item.userid %}
+        {% if {'voterid': user,
+                'userid': item.userid,
+              'username': username} in voters.upvote %}
+            <a class="upvoted" href="{{ url_for('upvote', resultid=raceid, voterid=user, userid=item.userid) }}"
+            title="Recomendações{{'\n'}}{% for upvote in voters.upvote %}{% if upvote.userid == item.userid %}{{ upvote.username + '\n' }}{% endif %}{% endfor %}"
+            ><i class="fa fa-thumbs-up"></i></a>
+        {% else %}
+            <a class="upvote" href="{{url_for('upvote', resultid=raceid, voterid=user, userid=item.userid) }}"
+            title="Recomendações{{'\n'}}{% for upvote in voters.upvote %}{% if upvote.userid == item.userid %}{{ upvote.username + '\n' }}{% endif %}{% endfor %}"
+            ><i class="fa fa-thumbs-o-up"></i></a>
+        {% endif %}
+        {% else %}
+            <a class="upvote" style="color: black;"href="#"><i class="fa fa-thumbs-up"></i></a>
+        {% endif %}
+        </td>
+        <!----<td>
+        {% if item.userid %}
+        {% if {'voterid': user,
+                'userid': item.userid,
+                'username': username} in voters.downvote %}
+            <a class="downvoted" href="{{ url_for('downvote', resultid=raceid, voterid=user, userid=item.userid) }}"
+            title="Contra Indicações{{'\n'}}{% for downvote in voters.downvote %}{% if downvote.userid == item.userid %}{{ downvote.username + '\n' }}{% endif %}{% endfor %}"
+            ><i class="fa fa-thumbs-down"></i></a>
+        {% else %}
+            <a class="downvote" href="{{ url_for('downvote', resultid=raceid, voterid=user, userid=item.userid) }}"
+            title="Contra Indicações{{'\n'}}{% for downvote in voters.downvote %}{% if downvote.userid == item.userid %}{{ downvote.username + '\n' }}{% endif %}{% endfor %}"
+            ><i class="fa fa-thumbs-o-down"></i></a>
+        {% endif %}
+        {% else %}
+        <a class="downvote" style="color: black;"href="#"><i class="fa fa-thumbs-down"></i></a>
+        {% endif %}
+        </td>-->
+          <td><i class="fa fa-chevron-down seta"></i></td>
+      </tr>
+      {% for lap in item.laps  %}
+        <tr class="cchild">
+        <td>{{lap.position}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{lap.fuel}}</td>
+        <td></td>
+        {% if  lap.bests1 == true %}
+        <td style="color: red" >{{lap.s1}}</td>
+        {% else %}
+        <td>{{lap.s1}}</td>
+        {% endif %}
+        {% if  lap.bests2 == true %}
+        <td style="color: red" >{{lap.s2}}</td>
+        {% else %}
+        <td>{{lap.s2}}</td>
+        {% endif %}
+        {% if  lap.bests3 == true %}
+        <td style="color: red" >{{lap.s3}}</td>
+        {% else %}
+        <td>{{lap.s3}}</td>
+        {% endif %}
+        {% if  lap.bestlap == true %}
+        <td style="color: red" colspan="2">{{lap.laptime}}</td>
+        {% else %}
+        <td colspan="2">{{lap.laptime}}</td>
+        {% endif %}
+      </tr>
+        {% endfor %}
+        <tr class="cchild">
+          <td colspan="12" style="text-align: right;"><strong>{{item.fulltime}}</strong></td>
+        </tr>
+        </tbody>
+        {% endfor %}
+        </table>
+        
+      </div>
+          
+
+    </div>
+  </center>
+</body>
+<footer>
+  
+  <script>
+  $('table').on('click', 'tr.parent .fa-chevron-down', function(){
+    console.log(this)
+    $(this).closest('tbody').toggleClass('opened');
+    });
+  </script>
+  <script>
+  $(document).ready(function() {
+    $("a.icon").popover({'trigger':'hover'});
+  });
+  </script>
+</footer>
+</html>

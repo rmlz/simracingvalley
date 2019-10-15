@@ -1,0 +1,198 @@
+<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+    	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113819959-1"></script>
+    	<script>
+      	window.dataLayer = window.dataLayer || [];
+	      function gtag(){dataLayer.push(arguments);}
+	      gtag('js', new Date());
+
+	      gtag('config', 'UA-113819959-1');
+	    </script>
+		<meta charset="utf-8" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta property="og:type" content="company" />
+		<meta property="og:title" content="Simracing Valley" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<meta property="og:url" content="{{ url_for('login')}} " />
+		<meta property="og:site_name" content="Simracing Valley" />
+
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/reset.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../static/css/dat-menu.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../static/css/main-stylesheet.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../static/css/responsive.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:300,400,700|Source+Sans+Pro:300,400,600,700&amp;subset=latin,latin-ext" />
+
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'></script>
+	    <script src='../static/js/chartjs-plugin-zoom'></script>
+	    <script src='../static/js/Hammer.min.js'></script>
+	    <script>
+	    setTimeout(function(){
+   			window.location.reload(1);
+			}, 120000);
+	    </script>
+		<!--[if lt IE 9 ]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style>
+			/* Man content & sidebar top lne, default #256193 */
+			#sidebar .panel,
+			#main-box #main {
+				border-top: 5px solid #256193;
+			}
+
+			/* Slider colors, default #256193 */
+			a.featured-select,
+			#slider-info .padding-box ul li:before,
+			.home-article.right ul li a:hover {
+				background-color: #256193;
+			}
+
+			/* Button color, default #256193 */
+			.panel-duel-voting .panel-duel-vote a {
+				background-color: #256193;
+			}
+
+			/* Menu background color, default #000 */
+			#menu-bottom.blurred #menu > .blur-before:after {
+				background-color: #000;
+			}
+
+			/* Top menu background, default #0D0D0D */
+			#header-top {
+				background: #0D0D0D;
+			}
+
+			/* Sidebar panel titles color, default #333333 */
+			#sidebar .panel > h2 {
+				color: #333333;
+			}
+
+			/* Main titles color, default #353535 */
+			#main h2 span {
+				color: #353535;
+			}
+
+			/* Selection color, default #256193 */
+			::selection {
+				background: #256193;
+			}
+
+			/* Links hover color, default #256193 */
+			.article-icons a:hover,
+			a:hover {
+				color: #256193;
+			}
+
+			/* Image hover background, default #256193 */
+			.article-image-out,
+			.article-image {
+				background: #256193;
+			}
+
+			/* Image hover icons color, default #256193 */
+			span.article-image span .fa {
+				color: #256193;
+			}
+			/* Outer */
+			.popup {
+			z-index: 9999;
+			width:100%;
+			height:100%;
+			display:none;
+			position:fixed;
+			top:0px;
+			left:0px;
+			background:rgba(0,0,0,0.75);
+			}
+			/* Inner */
+			.popup-inner {
+			max-width:700px;
+			width:70%;
+			padding:40px;
+			position:absolute;
+			z-index: 1000;
+			top:50%;
+			left:50%;
+			-webkit-transform:translate(-50%, -50%);
+			transform:translate(-50%, -50%);
+			box-shadow:0px 2px 6px rgba(0,0,0,1);
+			border-radius:3px;
+			background:#fff;
+			}
+			/* Close Button */
+			.popup-close {
+			width:5%;
+			height:5%;
+			padding-top:6px;
+			display:inline-block;
+			position:absolute;
+			z-index: 1001;
+			top:0px;
+			right:0px;
+			transition:ease 0.25s all;
+			-webkit-transform:translate(50%, -50%);
+			transform:translate(50%, -50%);
+			border-radius:1000px;
+			background:rgba(0,0,0,0.8);
+			font-family:Arial, Sans-Serif;
+			font-size:20px;
+			text-align:center;
+			line-height:100%;
+			color:#fff;
+			}
+			.popup-close:hover {
+			-webkit-transform:translate(50%, -50%) rotate(180deg);
+			transform:translate(50%, -50%) rotate(180deg);
+			background:rgba(0,0,0,1);
+			text-decoration:none;
+			}
+			input[type=text], select {
+		    width: 100%;
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+			}		
+
+			input[type=submit] {
+		    width: 100%;
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 14px 20px;
+		    margin: 8px 0;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+			}
+
+			input[type=submit]:hover {
+		    background-color: #45a049;
+			}
+			
+
+			div.user {
+		    display: block;
+		    width: 100%;
+		    height: 200px;
+		    padding: 5px;
+		    border: 2px solid black;        
+		    background-color: white; 
+		    overflow: auto;
+			}
+			li.driver {
+			font-size: 18px;
+			}
+			li.driver:hover {
+			background: #f55;
+			 }
+		</style>

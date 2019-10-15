@@ -1,0 +1,29 @@
+<!-- TOP BAR -->
+          <div class="top-bar top-bar-black">
+            <div class="container-m-30 clearfix">
+
+              <!-- LEFT SECTION -->
+              <ul class="top-bar-section left display-xxs-no">
+                <li><a href="{{ url_for('login') }}"> <i class="fa fa-home"></i> Home</a></li>
+                <li><a href="{{ url_for('showDriverList') }}"><i class="fa fa-list"></i> Ranking</a></li>
+                <li><a href="{{ url_for('showDriverList', kind='season') }}"><i class="fa fa-star"></i> Ranking Sazonal</a></li>
+                <li><a href="{{ url_for('schedulerace') }}"><i class="fa fa-calendar"></i> Marcar corrida</a></li>
+                <li><a href="{{ url_for('login') }}static/others/Manual_SV.pdf"><i class="fa fa-file-text"></i> Manual SV</a></li>
+                {% if current_user.get_id() %}
+                <li><a href="{{ url_for('driver', userid=current_user.get_id()) }}"><i class="fa fa-user"></i> {{ current_user.get_username() }}</a></li>
+                <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i> SAIR</a></li>
+                {% endif %}
+
+                
+              </ul>
+
+              <!-- RIGHT SECTION -->
+              <ul class="top-bar-section right">
+              <!--  <li><a href="tel:138376628"><i class="fa fa-phone mr-5"></i> 1-800-312-212</a></li>
+                <li><a href="contact.html"><i class="fa  fa-clock-o mr-5"></i> Mon - Fri: 08.00 - 17.00</a></li>-->
+                <li class="display-xxs-no"><a href="mailto:contato@simracingvalley.com" title="E-mail"><i class="fa fa-envelope mr-7"></i>contato@simracingvalley.com</a></li>
+              </ul>
+
+            </div>
+          </div>
+

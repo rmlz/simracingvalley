@@ -1,0 +1,1305 @@
+﻿<!DOCTYPE html>
+<!--
+
+	Theme Name: Elementy
+	Description: HTML/CSS
+	Author: Abcgomel
+	Designed & Coded by Abcgomel
+
+-->
+
+<html ng-app="myApp">
+ 	<head>
+    {% if current_user.is_authenticated == true %}
+      {% if current_user.user_obj()['sponsor'] == false %}
+      <script> console.log('APOIE O SIMRACING VALLEY')</script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2262399589748995",
+            enable_page_level_ads: true
+       });
+      </script>
+      {% else %}
+      {% endif %}
+      {% else %}
+      <script> console.log('APOIE O SIMRACING VALLEY')</script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2262399589748995",
+            enable_page_level_ads: true
+       });
+      </script>
+      {% endif %}
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113819959-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113819959-1');
+    </script>
+		<title>Simracing Valley - Reunindo diversão e competição em um só lugar!</title>
+		<meta charset="utf-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<meta name="robots" content="index, follow" >
+		<meta name="keywords" content="HTML5 Template" >
+		<meta name="description" content="Simracing Valley - Tornando o AV Brasileiro cada vez mais forte" >
+		<meta name="author" content="Vladimir Azarushkin">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#2a2b2f">
+
+		<!-- FAVICONS -->
+    <link rel="shortcut icon" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="192x192" href="images/favicon/icon-192x192.png">
+
+<!-- CSS -->
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,300%7COpen+Sans:400,300,700" rel="stylesheet" type="text/css">
+
+    <!-- REVOSLIDER CSS SETTINGS -->
+
+    <!-- ANGULAR SETTINGS FILES -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+    <script src="{{ url_for('login') }}static/js/app.js"></script>
+    <script src="{{ url_for('login') }}static/js/dirPagination.js"></script>
+
+    <!-- REVOLUTION STYLE SHEETS -->
+    <link href="{{ url_for('login') }}static/revo-slider/css/settings-custom.css" rel="stylesheet" type="text/css">
+
+    <!-- REVOLUTION NAVIGATION STYLES -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('login') }}static/revo-slider/css/navigation-skins/hermes-custom.css">
+
+    <!-- BOOTSTRAP -->
+		<link rel="stylesheet" href="{{ url_for('login') }}static/css/bootstrap.min.css">
+
+    <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->
+		<link rel="stylesheet" href="{{ url_for('login') }}static/css/icons-fonts.css" >
+
+    <!-- CSS THEME -->
+		<link rel="stylesheet" href="{{ url_for('login') }}static/css/style.css" >
+
+    <!-- ANIMATE -->
+		<link rel="stylesheet" href="{{ url_for('login') }}static/css/animate.min.css">
+
+    <!-- IE Warning CSS -->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie-warning.css" ><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie8-fix.css" ><![endif]-->
+
+    <!-- Magnific popup, Owl Carousel Assets in style.css -->
+
+<!-- CSS end -->
+
+<!-- JS begin some js files in bottom of file-->
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+
+		<!-- LOADER -->
+		<div id="loader-overflow">
+      <div id="loader3" class="loader-cont">Please enable JS</div>
+    </div>
+
+		<div id="wrap" class="boxed ">
+			<div class="grey-bg"> <!-- Grey BG  -->
+
+				<!--[if lte IE 8]>
+				<div id="ie-container">
+					<div id="ie-cont-close">
+						<a href="#" onclick="javascript&#058;this.parentNode.parentNode.style.display="none"; return false;"><img src="images/ie-warn/ie-warning-close.jpg" style="border: none;" alt="Close"></a>
+					</div>
+					<div id="ie-cont-content" >
+						<div id="ie-cont-warning">
+							<img src="images/ie-warn/ie-warning.jpg" alt="Warning!">
+						</div>
+						<div id="ie-cont-text" >
+							<div id="ie-text-bold">
+								You are using an outdated browser
+							</div>
+							<div id="ie-text">
+								For a better experience using this site, please upgrade to a modern web browser.
+							</div>
+						</div>
+						<div id="ie-cont-brows" >
+							<a href="http://www.firefox.com" target="_blank"><img src="images/ie-warn/ie-warning-firefox.jpg" alt="Download Firefox"></a>
+							<a href="http://www.opera.com/download/" target="_blank"><img src="images/ie-warn/ie-warning-opera.jpg" alt="Download Opera"></a>
+							<a href="http://www.apple.com/safari/download/" target="_blank"><img src="images/ie-warn/ie-warning-safari.jpg" alt="Download Safari"></a>
+							<a href="http://www.google.com/chrome" target="_blank"><img src="images/ie-warn/ie-warning-chrome.jpg" alt="Download Google Chrome"></a>
+						</div>
+					</div>
+				</div>
+				<![endif]-->
+
+				<!-- HEADER TOP BAR FONT BLACK NO TRANSPARENT NO MOBILE TRANSPARENT -->
+				<header id="nav" class="header header-1 no-transparent mobile-no-transparent">
+
+          {% include 'header.html' %}
+
+				  <div class="header-wrapper">
+            <div class="container-m-30 clearfix">
+              <div class="logo-row">
+
+						<!-- LOGO -->
+                <div class="logo-container-2">
+                  <div class="logo-2">
+                    <a href="http://www.simracingvalley.com" class="clearfix">
+                      <img src="{{url_for('login')}}static/images/logo.png" class="logo-img" alt="Logo">
+                    </a>
+                  </div>
+                </div>
+					      </div>
+					    </div>
+
+					<!-- MAIN MENU CONTAINER -->
+					<div class="main-menu-container">
+            <div class="container-m-30 clearfix">
+              <!-- MAIN MENU -->
+							<div id="main-menu" >
+								 <nav class="navbar navbar-default">
+
+                    <!-- MAIN MENU LIST -->
+                    <nav class="collapse collapsing navbar-collapse right-1024">
+                      <ul class="nav navbar-nav">
+
+                        <!-- MENU ITEM -->
+                        <!--<div class="main-menu-container">-->
+
+              						<div class="container-m-30 clearfix">
+
+              								<!-- MAIN MENU -->
+              						   <div id="main-menu">
+              								  <div class="navbar navbar-default" role="navigation">
+
+
+
+				  <!-- END header-wrapper -->
+
+				</header>
+
+        <!-- SLIDER Revo Hero 4 -->
+        <div class="relative indent-header-top-bar">
+
+            <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_280_1_wrapper" style="margin:0px auto;background-color:#101010;padding:0px;margin-top:0px;margin-bottom:0px;">
+                <!-- START REVOLUTION SLIDER 5.1.4 fullwidth mode -->
+                <div class="rev_slider fullwidthabanner" data-version="5.1.4" id="rev_slider_280_1" style="display:none;">
+                    <ul>
+                        <!-- SLIDE  -->
+                        <!--
+                        <li data-index="rs-672" data-transition="zoomout" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="static/images/revo-slider/constr-180x110.jpg" data-rotate="0" data-saveperformance="off" data-title="CONSTRUCTION" data-description="">
+                            <!-- MAIN IMAGE
+                            <img src="static/images/revo-slider/constr.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS
+
+                            <!-- LAYER NR. 1
+
+                            <div class="tp-caption font-poppins font-white tp-resizeme rs-parallaxlevel-6" id="slide-898-layer-1" style="z-index: 8; white-space: nowrap;"
+                            data-fontsize="['55','50','50','33']"
+
+                            data-height="none"
+                            data-lineheight="['102','82','74','64']"
+                            data-responsive_offset="on"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-start="500"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;s:1000;"
+                            data-mask_in="x:0px;y:0px;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                            data-whitespace="nowrap"
+                            data-width="none"
+                            data-x="['left','left','center','center']"
+                            data-hoffset="['40','40','0','0']"
+                            data-y="['center','center','center','center']"
+                            data-voffset="['-50','-50','-35','-33']"><span class="bold">Classificação</span><span class="bold">Brasileira</span></div>
+
+                             LAYER NR. 2
+                            <div class="tp-caption font-poppins font-white tp-resizeme rs-parallaxlevel-6" id="slide-898-layer-2" style="z-index: 8; white-space: nowrap;"
+                            data-fontsize="['16','16','16','16']"
+                            data-fontweight="300"
+                            data-height="none"
+                            data-lineheight="['24','24','24','24']"
+                            data-responsive_offset="on"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-start="900"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;s:1000;"
+                            data-mask_in="x:0px;y:0px;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                            data-whitespace="nowrap"
+                            data-width="none"
+                            data-x="['left','left','center','center']"
+                            data-hoffset="['40','40','0','0']"
+                            data-y="['center','center','center','center']"
+                            data-visibility="['on','on','off','off']"
+                            data-voffset="['15','20','0','-0']">
+                              <span class="text-sm-center">Compare-se com os pilotos do seu grid.<br/>
+                              	Avalie o nível dos pilotos frequentadores do seu Clube ou Liga.</span>
+                            </div>
+
+                            <!-- LAYER NR. 3
+                            <div class="tp-caption rs-parallaxlevel-6"
+                               id="slide-898-layer-3"
+                               data-x="['left','left','center','center']"
+                               data-hoffset="['40','40','0','0']"
+                               data-y="['center','center','center','center']"
+                               data-voffset="['90','115','40',40']"
+                              data-width="none"
+                              data-height="none"
+                              data-whitespace="nowrap"
+                              data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;s:1000;"
+                            data-mask_in="x:0px;y:0px;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                              data-start="1500"
+                              data-splitin="none"
+                              data-splitout="none"
+                              data-responsive_offset="on"
+                              data-responsive="off"
+
+                              style="z-index: 8; white-space: nowrap;outline:none;"><a class="tp-button1 button medium full-rounded hover-dark white" href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">Acesse</a><a class="tp-button1 button medium full-rounded thin white ml-20" href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">Como funciona?</a>
+                            </div>
+
+
+                        </li> -->
+
+
+                        <!-- SLIDE  -->
+                        <li data-index="rs-673" data-transition="zoomout" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ url_for('login') }}static/images/revo-slider/constr2-180x110.jpg" data-rotate="0" data-saveperformance="off" data-title="CONSTRUCT WORKS" data-description="">
+                            <!-- MAIN IMAGE -->
+                            <img src="{{ url_for('login') }}static/images/revo-slider/constr2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS -->
+
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption font-poppins font-white tp-resizeme rs-parallaxlevel-6" id="slide-8981-layer-1" style="z-index: 8; white-space: nowrap;"
+                            data-fontsize="['20','24','24','24']"
+                            data-fontweight="400"
+                            data-height="none"
+                            data-lineheight="['74','74','74','74']"
+                            data-responsive_offset="on"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-start="350"
+                            data-transform_idle="o:1;"
+
+									 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+									 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+									 data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+									 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                            data-whitespace="nowrap"
+                            data-width="none"
+                            data-x="['center','center','center','center']"
+                            data-hoffset="['0','0','0',0']"
+                            data-y="['center','center','center','center']"
+                            data-voffset="['-70','-90','-70','-55']">
+                              Simracing Valley
+                            </div>
+
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption font-poppins font-white tp-resizeme rs-parallaxlevel-6" id="slide-8981-layer-2" style="z-index: 8; white-space: nowrap;"
+                            data-fontsize="['70','50','80','50']"
+                            data-fontweight="600"
+                            data-height="none"
+                            data-lineheight="['120','130','110','95']"
+                            data-responsive_offset="on"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-start="550"
+                            data-transform_idle="o:1;"
+
+									 data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
+									 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+									 data-mask_in="x:0px;y:0px;"
+									 data-mask_out="x:inherit;y:inherit;"
+                            data-whitespace="nowrap"
+                            data-width="none"
+                            data-x="['center','center','center','center']"
+                            data-hoffset="['0','0','0',0']"
+                            data-y="['center','center','center','center']"
+                            data-voffset="['0','0','0',0']">
+                              {% if kind == 'global' %}Classificação Geral
+                              {% else %}Classificação T1-2019
+                              {% endif %}
+                            </div>
+
+                            <!-- LAYER NR. 3 -->
+                            <div class="tp-caption rs-parallaxlevel-6"
+                               id="slide-1291-layer-3"
+                               data-x="['center','center','center','center']"
+                               data-hoffset="['0','0','0','0']"
+                               data-y="['center','center','center','center']"
+                               data-voffset="['90','120','100',80']"
+                              data-width="none"
+                              data-height="none"
+                              data-whitespace="nowrap"
+                              data-transform_idle="o:1;"
+										data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+										data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+
+									 data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
+									 data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+									 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                              data-start="1000"
+                              data-splitin="none"
+                              data-splitout="none"
+                              data-responsive_offset="on"
+                              data-responsive="off"
+
+                            </div>
+
+                        </li>
+
+
+                        <!-- SLIDE  -->
+                        <!--
+                        <li data-index="rs-674" data-transition="zoomout" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="static/images/revo-slider/constr3-180x110.jpg" data-rotate="0" data-saveperformance="off" data-title="CREATIVE" data-description="">
+                            <!-- MAIN IMAGE -->
+                            <!--
+                            <img src="static/images/revo-slider/constr3.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS -->
+
+                            <!-- LAYER NR. 1 -->
+                            <!--
+                            <div class="tp-caption font-poppins font-white tp-resizeme rs-parallaxlevel-6" id="slide-899-layer-1" style="z-index: 8; white-space: nowrap;"
+                            data-fontsize="['70','70','55','40']"
+                            data-fontweight="600"
+                            data-height="none"
+                            data-lineheight="['82','82','74','64']"
+                            data-responsive_offset="on"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-start="500"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;s:1000;"
+                            data-mask_in="x:0px;y:0px;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                            data-whitespace="nowrap"
+                            data-width="none"
+                            data-x="['left','left','left','left']"
+                            data-hoffset="['40','40','40','20']"
+                            data-y="['center','center','center','center']"
+                            data-voffset="['-40','-40','-33','-25']">
+                              Creative Studio
+                            </div>
+
+                            <!-- LAYER NR. 2 -->
+                            <!--
+                            <div class="tp-caption font-poppins font-white tp-resizeme rs-parallaxlevel-6" id="slide-899-layer-2" style="z-index: 8; white-space: nowrap;"
+                            data-fontsize="['70','70','55','40']"
+                            data-fontweight="600"
+                            data-height="none"
+                            data-lineheight="['82','82','74','64']"
+                            data-responsive_offset="on"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-start="900"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;s:1000;"
+                            data-mask_in="x:0px;y:0px;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                            data-whitespace="nowrap"
+                            data-width="none"
+                            data-x="['left','left','left','left']"
+                            data-hoffset="['40','40','40','20']"
+                            data-y="['center','center','center','center']"
+                            data-voffset="['40','40','33','25']">
+                              Elementy
+                            </div>
+
+                            <!-- LAYER NR. 3 -->
+                            <!--
+                            <div class="tp-caption rs-parallaxlevel-6 tp-resizeme"
+                               id="slide-129-layer-3"
+                               data-fontsize="['130','110','70','50']"
+                               data-lineheight="['140','130','100','70']"
+                               data-x="['right','right','right','right']"
+                               data-hoffset="['70','40','40','20']"
+                               data-y="['center','center','center','center']"
+                               data-voffset="['0','0','0',0']"
+                              data-width="none"
+                              data-height="none"
+                              data-whitespace="nowrap"
+                              data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;s:1000;"
+                            data-mask_in="x:0px;y:0px;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                              data-start="1500"
+                              data-splitin="none"
+                              data-splitout="none"
+                              data-responsive_offset="on"
+                              data-responsive="off"
+
+                              style="z-index: 8; white-space: nowrap;outline:none;"><a class="popup-youtube font-white" href="https://www.youtube.com/watch?v=0gv7OC9L2s8">                 <span class="icon icon-music-play-button"></span></a>
+                            </div>
+
+                        </li> -->
+
+
+                    </ul>
+                    <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+                </div>
+            </div>
+            <!-- END REVOLUTION SLIDER -->
+
+        </div>
+
+        <!-- CALL TO ACTION 2 -->
+        <div class="page-section bg-gray-light pt-80-b-50-cont">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-9 pb-30 text-sm-center">
+                <h4 class="mt-0 mb-0"><span class="bold">Compare o seu desempenho com o de todos os outros integrantes do Simracing Valley!</span>
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+
+        <!-- FEATURES 6-2 TEXT CENTER -->
+        <!--<div class="page-section pt-120-b-100-cont">
+					<div class="container">
+            <div class="row">
+
+              <div class="col-md-3 col-sm-3">
+                <div class="fes6-2-box wow fadeIn" >
+                  <div class="icon icon-basic-settings"></div>
+                  <h3>Home Maintenance</h3>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-3">
+                <div class="fes6-2-box wow fadeIn" >
+                  <div class="icon icon-music-repeat-button"></div>
+                  <h3>Interior Renovation</h3>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-3">
+                <div class="fes6-2-box wow fadeIn" data-wow-delay="200ms">
+                  <div class="icon icon-ecommerce-money"></div>
+                  <h3>Project Buildings</h3>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-3">
+                <div class="fes6-2-box wow fadeIn" data-wow-delay="400ms" >
+                  <div class="icon icon-basic-bolt"></div>
+                  <h3>Electrical Engineering</h3>
+                </div>
+              </div>
+
+						</div>
+					</div>
+				</div>
+
+        <!-- FEATURES 7 -->
+        <div class="page-section clearfix">
+          <div class="fes7-img-cont col-md-5" style="z-index: -1000;">
+            <div class="fes7-img" style="background-image: url(images/fes7-constr2.jpg)"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+              <div class="fes7-text-cont p-80-cont">
+                <h1><span class="font-light">Nosso algoritmo reconhece as chances de vitória de cada piloto!</span></h1>
+                <p class="mb-60">
+                  O Ranking do SImracing Valley foi desenvolvido para posicionar o piloto de forma rápida. Ao completar 5 resultados, o piloto é posicionado no Ranking baseado em seus resultados. Nosso algoritmo é capaz de calcular as chances de vitória de cada um dos pilotos no grid. Um piloto que vença de um grid mais "difícil" receberá muito mais pontos que um piloto que vença de um grid "fácil". Nosso próximo passo é dar a chance de os pilotos escolherem entre <strong>ESCALAR</strong> os grupos até o topo do Ranking, ou se estabelecer em um grupo confortável e se <strong>DIVERTIR</strong> participando de corridas contra outros pilotos de mesmo nível! Para isso, o Vale precisa do seu <a href="https://apoia.se/valleyalliance">APOIO</a>.
+              </p>
+
+              <div class="row">
+
+                  <div class="col-md-6 col-sm-6">
+                    <div class="fes7-box wow fadeIn" >
+                      <div class="fes7-box-icon">
+                        <div class="icon icon-ecommerce-graph-increase"></div>
+                    </div>
+                    <h3>Alcance o TOPO!</h3>
+                    <p>Corra contra os melhores dos melhores dentro da plataforma e estabeleça o seu lugar entre eles!</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+                <div class="fes7-box wow fadeIn" data-wow-delay="400ms">
+                  <div class="fes7-box-icon">
+                    <div class="glyphicon glyphicon-road"></div>
+                </div>
+                <h3>Diversão SEMPRE!</h3>
+                <p>Utilize a plataforma para relaxar ao mesmo tempo que curte uma boa dose de adrenalina, enquanto disputa contra outros usuários!</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+                  
+
+                <!--<div class="row">
+
+                  
+
+                  <div class="col-md-6 col-sm-6">
+                    <div class="fes7-box wow fadeIn"  data-wow-delay="600ms">
+                      <div class="fes7-box-icon">
+                        <div class="icon icon-basic-bolt"></div>
+                      </div>
+                      <h3>1500+ Icons</h3>
+                      <p>Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div><!--end of row-->
+        <!--  </div>
+        </div>
+
+				<!-- FEATURES 17 OUR SERVICES 2 -->
+			<!--	<div class="page-section pt-160-b-120-cont">
+					<div class="container">
+            <div class="row">
+
+							<div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="mb-70 wow fadeIn">
+								  <div class="fes17-title-cont" >
+								  	<div class="fes17-box-icon">
+								  		<div class="icon icon-ecommerce-graph-increase"></div>
+								  	</div>
+								  	<h3>Marketing</h3>
+								  </div>
+								  <div class="text-center">
+								    Maecenas luctus nisi in sem fermentum blandit. In nec elit sollicitudin, elementum odio et, dictum purus. Proin malesuada quam a volutpat
+								  </div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="mb-70 wow fadeIn" data-wow-delay="200ms">
+								  <div class="fes17-title-cont" >
+								  	<div class="fes17-box-icon">
+								  		<div class="icon icon-basic-settings"></div>
+								  	</div>
+								  	<h3>Development</h3>
+								  </div>
+								  <div class="text-center">
+								    Maecenas luctus nisi in sem fermentum blandit. In nec elit sollicitudin, elementum odio et, dictum purus. Proin malesuada quam a volutpat
+								  </div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="mb-70 wow fadeIn" data-wow-delay="400ms">
+								  <div class="fes17-title-cont" >
+								  	<div class="fes17-box-icon">
+								  		<div class="icon icon-basic-share"></div>
+								  	</div>
+								  	<h3>Production</h3>
+								  </div>
+								  <div class="text-center">
+								    Maecenas luctus nisi in sem fermentum blandit. In nec elit sollicitudin, elementum odio et, dictum purus. Proin malesuada quam a volutpat
+								  </div>
+								</div>
+							</div>
+
+						</div>
+						<div class="row">
+
+							<div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="mb-70 wow fadeIn" data-wow-delay="600ms">
+								  <div class="fes17-title-cont" >
+								  	<div class="fes17-box-icon">
+								  		<div class="icon icon-basic-target"></div>
+								  	</div>
+								  	<h3>Branding</h3>
+								  </div>
+								  <div class="text-center">
+								    Maecenas luctus nisi in sem fermentum blandit. In nec elit sollicitudin, elementum odio et, dictum purus. Proin malesuada quam a volutpat
+								  </div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="mb-70 wow fadeIn" data-wow-delay="800ms">
+								  <div class="fes17-title-cont" >
+								  	<div class="fes17-box-icon">
+								  		<div class="icon icon-basic-globe"></div>
+								  	</div>
+								  	<h3>Web Design</h3>
+								  </div>
+								  <div class="text-center">
+								    Maecenas luctus nisi in sem fermentum blandit. In nec elit sollicitudin, elementum odio et, dictum purus. Proin malesuada quam a volutpat
+								  </div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="mb-70 wow fadeIn" data-wow-delay="1000ms">
+								  <div class="fes17-title-cont" >
+								  	<div class="fes17-box-icon">
+								  		<div class="icon icon-basic-picture"></div>
+								  	</div>
+								  	<h3>Photography</h3>
+								  </div>
+								  <div class="text-center">
+								    Maecenas luctus nisi in sem fermentum blandit. In nec elit sollicitudin, elementum odio et, dictum purus. Proin malesuada quam a volutpat
+								  </div>
+								</div>
+							</div>
+
+            </div>
+					</div>
+				</div>
+
+        <!-- PORTFOLIO SECTION 2 -->
+      <!--  <div class="page-section bg-gray-light">
+          <div class="relative">
+
+            <div class="mt-100 mb-50 text-center">
+              <h2 class="section-title2 pr-0 font-light">Our Projects</h2>
+            </div>
+
+            <!-- ITEMS GRID -->
+        <!--    <ul class="port-grid port-grid-3 clearfix" id="items-grid">
+
+              <!-- Item 1 -->
+          <!--    <li class="port-item mix design">
+                <a href="portfolio-single1.html">
+                  <div class="port-img-overlay">
+                    <img class="port-main-img" src="images/portfolio/constr-projects-1.jpg" alt="img" >
+                  </div>
+                  <div class="port-overlay-cont">
+                    <div class="port-title-cont2">
+                      <h3>Minimalism</h3>
+                      <span>design</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <!-- Item 2 -->
+          <!--    <li class="port-item mix design">
+                <a href="portfolio-single1.html">
+                  <div class="port-img-overlay">
+                    <img class="port-main-img" src="images/portfolio/constr-projects-2.jpg" alt="img" >
+                  </div>
+                  <div class="port-overlay-cont">
+                    <div class="port-title-cont2">
+                      <h3>The Sea Room</h3>
+                      <span>design</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <!-- Item 3 -->
+          <!--    <li class="port-item mix design">
+                <a href="portfolio-single1.html">
+                  <div class="port-img-overlay">
+                    <img class="port-main-img" src="images/portfolio/constr-projects-3.jpg" alt="img" >
+                  </div>
+                  <div class="port-overlay-cont">
+                    <div class="port-title-cont2">
+                      <h3>Interior Design</h3>
+                      <span>design</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <!-- Item 4 -->
+          <!--    <li class="port-item mix design">
+                <a href="portfolio-single1.html">
+                  <div class="port-img-overlay">
+                    <img class="port-main-img" src="images/portfolio/constr-projects-4.jpg" alt="img" >
+                  </div>
+                  <div class="port-overlay-cont">
+                    <div class="port-title-cont2">
+                      <h3>Skyscraper</h3>
+                      <span>design</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <!-- Item 5 -->
+          <!--    <li class="port-item mix design">
+                <a href="portfolio-single1.html">
+                  <div class="port-img-overlay">
+                    <img class="port-main-img" src="images/portfolio/constr-projects-5.jpg" alt="img" >
+                  </div>
+                  <div class="port-overlay-cont">
+                    <div class="port-title-cont2">
+                      <h3>Wooden House</h3>
+                      <span>design</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <!-- Item 6 -->
+        <!--      <li class="port-item mix design">
+                <a href="portfolio-single1.html">
+                  <div class="port-img-overlay">
+                    <img class="port-main-img" src="images/portfolio/constr-projects-6.jpg" alt="img" >
+                  </div>
+                  <div class="port-overlay-cont">
+                    <div class="port-title-cont2">
+                      <h3>Architecture</h3>
+                      <span>design</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+        <!-- VIEW MORE PROJECTS  -->
+    <!--    <div class="port-view-more-cont">
+          <a class="port-view-more" href="portfolio-masonry-4col.html">View All Projects</a>
+        </div>
+
+        <!-- CLIENTS 1 & TESTIMONIALS 1 -->
+    <!--    <div class="page-section p-110-cont">
+					<div class="container">
+
+            <div class="row">
+              <!-- CLIENTS 1 -->
+          <!--    <div class="col-md-7">
+                <div class="row client-row border-bot">
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/1.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/2.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/3.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/4.png">
+                    </div>
+
+                </div>
+
+                <div class="row client-row">
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/5.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/6.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/7.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/8.png">
+                    </div>
+
+                </div>
+
+							</div>
+              <!-- TESTIMONIALS 1 -->
+      <!--        <div class="col-md-5">
+                <blockquote class="quote mb-0 pl-50-min-1169">
+                  <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Harum, maiores esse temporibus </p>
+                  <footer>John Doe, Google Inc.</footer>
+                 </blockquote>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+        <!-- DIVIDER -->
+		<!--		<hr class="mt-0 mb-0">
+
+        <!-- FAQ -->
+    <!--    <div class="page-section p-110-cont">
+          <div class="container">
+
+            <div class="row text-center">
+
+              <div class="col-md-12">
+                <div class="mb-50">
+								  <h2 class="section-title2 pr-0">FAQ</h2>
+								</div>
+							</div>
+
+						</div>
+            <div class="row">
+              <div class="col-md-6 mb-30">
+
+                  <!-- Toggle -->
+          <!--        <dl class="toggle">
+                    <dt>
+                      <a href="#">WHAT IS HTML?</a>
+                    </dt>
+                    <dd>
+                      HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages.
+                    </dd>
+                    <dt>
+                        <a href="#">WHAT IS TWITTER BOOTSTRAP?</a>
+                    </dt>
+                    <dd>
+                      Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions.
+                    </dd>
+                    <dt>
+                      <a href="#">WHAT IS CSS?</a>
+                    </dt>
+                    <dd>
+                      CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc.
+                    </dd>
+                  </dl>
+                  <!-- End Toggle -->
+
+      <!--        </div>
+
+              <div class="col-md-6 mb-30">
+                <div class="tabs-3">
+                  <ul class="nav nav-tabs bootstrap-tabs">
+                    <li class="active"><a href="#about-tab" class="a-inv" data-toggle="tab">ABOUT</a></li>
+                    <li><a href="#contact-tab" class="a-inv" data-toggle="tab">CONTACT</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane fade in active" id="about-tab">
+                      <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. </p>
+                    </div>
+                    <div class="tab-pane fade" id="contact-tab">
+                      <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+				<!-- ABOUT US 2 -->
+		<!--		<div class="page-section about-us-2-cont pt-100-cont">
+					<div class="container">
+
+            <div class="row">
+              <div class="col-md-12 text-center wow fadeInUp" data-wow-duration="1s">
+                <img src="images/team/team-all-constr.jpg" alt="img">
+              </div>
+            </div>
+
+					</div>
+        </div>
+
+        <!-- CALL TO ACTION  -->
+    <!--    <div class="port-view-more-cont-dark">
+          <a class="port-view-more-dark ls-norm font-light" href="contact.html">Let's Work Together</a>
+        </div>
+
+        <!-- BLOG 2 -->
+      <!--  <div class="page-section pt-110-b-30-cont">
+          <div class="container">
+
+            <div class="mb-50">
+              <h2 class="section-title2 pr-0">Latest News<a href="blog-right-sidebar.html" class="section-more right">All News</a>
+                  </h2>
+            </div>
+
+            <div class="row">
+
+              <!-- Post Item 1 -->
+          <!--    <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+
+                  <div class="col-md-4 blog2-post-title-cont">
+                    <div class="post-prev-date-cont">
+                      <span class="blog2-date-numb">21</span><span class="blog2-month">October</span>
+                    </div>
+                    <div class="post-prev-title">
+                      <h3><a href="blog-single-sidebar-right.html">Time For Minimalism</a></h3>
+                      <div class="post-prev-info">
+                        <a href="#">design</a><span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">john doe</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-8">
+                    <div class="blog2-post-prev-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Post Item 2 -->
+      <!--        <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+
+                  <div class="col-md-4 blog2-post-title-cont">
+                    <div class="post-prev-date-cont">
+                      <span class="blog2-date-numb">17</span><span class="blog2-month">August</span>
+                    </div>
+                    <div class="post-prev-title">
+                      <h3><a href="blog-single-sidebar-right.html">New Trends In Web</a></h3>
+                      <div class="post-prev-info">
+                        <a href="#">design</a><span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">john doe</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-8">
+                    <div class="blog2-post-prev-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Post Item 3 -->
+        <!--      <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+
+                  <div class="col-md-4 blog2-post-title-cont">
+                    <div class="post-prev-date-cont">
+                      <span class="blog2-date-numb">1</span><span class="blog2-month">August</span>
+                    </div>
+                    <div class="post-prev-title">
+                      <h3><a href="blog-single-sidebar-right.html">The Sound Of Life</a></h3>
+                      <div class="post-prev-info">
+                        <a href="#">design</a><span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">john doe</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-8">
+                    <div class="blog2-post-prev-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      -->
+          <!--  <div class="bs-component">-->
+        <div class="container">
+          <div class="row justify-content-center bg-yellow">
+            <div class="col-4">
+              <form>
+                  <div class="form-group">
+                      <input type="text" ng-model="search" class="form-control form-control-lg" placeholder="Filtre por Nome">
+                    </div>
+              </form>
+            </div>
+          </div>
+          
+          <div class="row justify-content-center">
+            {% if kind == 'season' %}
+              <table ng-controller="ftRankCtrl" class="table table-striped table-hover table-responsive" id="rank">
+            {% else %}
+              <table ng-controller="globalRankCtrl" class="table table-striped table-hover table-responsive" id="rank">
+            {% endif %}
+                  <thead class="thead-dark">
+                  <th ng-click="sort('Position')">
+                      Pos
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Position'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+                  <th ng-click="sort('$Index')">
+                      #
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='$index'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+                  <th ng-click="sort('Name')">
+                      Nome
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('Races')">
+                      Corridas
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Races'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('Races_15')">
+                      Corridas 15
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Races_15'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('First')">
+                      <img src="{{ url_for('login') }}static/images/1st.png">
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='First'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('Second')">
+                      <img src="{{ url_for('login') }}static/images/2nd.png">
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Second'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('Third')">
+                      <img src="{{ url_for('login') }}static/images/3rd.png">
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Third'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('Fourth')">
+                      <img src="{{ url_for('login') }}static/images/4th.png">
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Fourth'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('Fifth')">
+                      <img src="{{ url_for('login') }}static/images/5th.png">
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Fifth'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+                  {% if kind == 'season' %}
+                  {% else %}
+                  <th ng-click="sort('Votes')">
+                      <i class="fa fa-thumbs-up"></i>
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Votes'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+                  {% endif %}
+
+                  <th ng-click="sort('Points')">
+                      Pontos
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Points'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('Incidents')">
+                      Incidentes
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Incidents'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+
+
+                  <th ng-click="sort('Points')">
+                      Classe
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='Points'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+                  </thead>
+
+                  <tbody>
+                      <tr dir-paginate="driver in drivers|orderBy:sortKey:reverse|filter:search|itemsPerPage:20 track by $index" current-page="currentPage">
+                          <th>{{ '{{driver.Position }}' }}</th>
+                          <th>{{ '{{($index + 1) + (currentPage - 1) * 20}}' }}</th>
+                          <th><a href="/profile/{{ '{{driver.id}}' }}">{{ '{{driver.Name}}' }}</a></th>
+                          <td>{{ '{{driver.Races}}' }}</td>
+                          <td>{{ '{{driver.Races_15}}' }}</td>
+                          <td>{{ '{{driver.First}}' }}</td>
+                          <td>{{ '{{driver.Second}}' }}</td>
+                          <td>{{ '{{driver.Third}}' }}</td>
+                          <td>{{ '{{driver.Fourth}}' }}</td>
+                          <td>{{ '{{driver.Fifth}}' }}</td>
+                          {% if kind == 'season' %}
+                          {% else %}
+                          <td>{{ '{{driver.Votes}}' }}</td>
+                          {% endif %}
+                          <td>{{ '{{driver.Points}}' }}</td>
+                          <td>{{ '{{driver.Incidents}}' }}</td>
+                          <td><img ng-src="{{url_for('login')}}static/images/{{'{{driver.Class}}'}}"></td>
+
+
+                          <!--<td><span style="cursor:pointer;" ng-click="editDriver(driver.id)" class="glyphicon glyphicon-pencil" ></span></td>
+            }
+            }
+    <td><span style="cursor:pointer;color:#e43309;" ng-click="confirmDelete(driver.id)" class="glyphicon glyphicon-remove" ></span></td>
+    <td><span style="cursor:pointer;color:#3c763d;" ng-click="showRunPopUp(driver.id)" class="glyphicon glyphicon-play" ></span></td>-->
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <dir-pagination-controls class="pull-right pagination active" template="{{ url_for('login') }}static/dirPagination.tpl.html">
+          </dir-pagination-controls>
+      </div>
+
+        <!-- NEWS LETTER
+        <div class="page-section nl-cont">
+          <div class="container">
+            <div class="col-sm-8">
+            	<h2 class="section-title2 font-light pr-0 nl-title">Newsletter</h2>
+            </div>
+            <div class="col-sm-4">
+            	<div class="relative" >
+            	  <div id="mc_embed_signup" class="nl-form-container clearfix">
+            	    <form action="http://abcgomel.us9.list-manage.com/subscribe/post-json?u=ba37086d08bdc9f56f3592af0&amp;id=e38247f7cc&amp;c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletterform validate" target="_blank" novalidate>   <!-- EDIT THIS ACTION URL (add "post-json?u" instead of "post?u" and appended "&amp;c=?" to the end of this URL) -->
+            	      <!--<input type="email" value="" name="EMAIL" class="email nl-email-input" id="mce-EMAIL" placeholder="Email address" required>
+            	      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            	      <!--<div style="position: absolute; left: -5000px;"><input type="text" name="b_ba37086d08bdc9f56f3592af0_e38247f7cc" tabindex="-1" value=""></div>
+
+            	      <button id="mc-embedded-subscribe" class="nl2-btn" type="submit" name="subscribe">
+            	            <span class="icon icon-arrows-slim-right"></span>
+            	          </button>
+            	    </form>
+            	    <div id="notification_container"  ></div>
+            	  </div>
+            	</div>
+            </div>
+          </div>
+        </div>
+      -->
+
+
+        {% include 'footer.html' %}
+
+<!-- JS begin -->
+
+		<!-- jQuery  -->
+		<script type="text/javascript" src="{{ url_for('login') }}static/js/jquery.min.js"></script>
+
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ url_for('login') }}static/js/bootstrap.min.js"></script>
+
+		<!-- MAGNIFIC POPUP -->
+		<script src="{{ url_for('login') }}static/js/jquery.magnific-popup.min.js"></script>
+
+    <!-- PORTFOLIO SCRIPTS -->
+    <script type="text/javascript" src="{{ url_for('login') }}static/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('login') }}static/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('login') }}static/js/masonry.pkgd.min.js"></script>
+
+    <!-- APPEAR -->
+    <script type="text/javascript" src="{{ url_for('login') }}static/js/jquery.appear.js"></script>
+
+    <!-- OWL CAROUSEL -->
+    <script type="text/javascript" src="{{ url_for('login') }}static/js/owl.carousel.min.js"></script>
+
+    <!-- JQUERY TWEETS -->
+		<script src="{{ url_for('login') }}static/js/twitter/jquery.tweet.js"></script>
+
+    <!-- MAIN SCRIPT -->
+		<script src="{{ url_for('login') }}static/js/main.js"></script>
+
+		<!-- REVOSLIDER SCRIPTS  -->
+    <script src="{{ url_for('login') }}static/revo-slider/js/jquery.themepunch.tools.min.js" type="text/javascript">
+    </script>
+    <script src="{{ url_for('login') }}static/revo-slider/js/jquery.themepunch.revolution.min.js" type="text/javascript">
+    </script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS
+      (Load Extensions only on Local File Systems !
+      The following part can be removed on Server for On Demand Loading) -->
+    <script src="{{ url_for('login') }}static/revo-slider/js/extensions/revolution.extension.actions.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('login') }}static/revo-slider/js/extensions/revolution.extension.carousel.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('login') }}static/revo-slider/js/extensions/revolution.extension.kenburn.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('login') }}static/revo-slider/js/extensions/revolution.extension.layeranimation.min.js" type="text/javascript">
+    </script>
+    <script src="{{ url_for('login') }}static/revo-slider/js/extensions/revolution.extension.migration.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('login') }}static/revo-slider/js/extensions/revolution.extension.navigation.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('login') }}static/revo-slider/js/extensions/revolution.extension.parallax.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('login') }}static/revo-slider/js/extensions/revolution.extension.slideanims.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('login') }}static/revo-slider/js/extensions/revolution.extension.video.min.js" type="text/javascript"></script>
+
+    <!-- SLIDER REVOLUTION INITIALIZATION  -->
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+
+        jQuery("#rev_slider_280_1").show().revolution({
+          sliderType: "standard",
+          jsFileLocation: "revo-slider/js/",
+          sliderLayout: "fullwidth",
+          dottedOverlay: "none",
+          delay: 9000,
+          navigation: {
+            keyboardNavigation: "off",
+            keyboard_direction: "horizontal",
+            mouseScrollNavigation: "off",
+            onHoverStop: "off",
+            touch: {
+                touchenabled: "on",
+                swipe_threshold: 75,
+                swipe_min_touches: 50,
+                swipe_direction: "horizontal",
+                drag_block_vertical: false
+            },
+            arrows: {
+              style: "hermes",
+              enable: false,
+              hide_onmobile: true,
+              hide_onleave: true,
+              tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div>	<div class="tp-arr-titleholder">{{title}}</div>	</div>',
+              left: {
+                h_align: "left",
+                v_align: "center",
+                h_offset: 0,
+                v_offset: 0
+              },
+              right: {
+                h_align: "right",
+                v_align: "center",
+                h_offset: 0,
+                v_offset: 0
+              }
+            },
+          },
+          responsiveLevels: [1240, 1024, 778, 480],
+          visibilityLevels: [1240, 1024, 778, 480],
+          gridwidth: [1240, 1024, 778, 480],
+          gridheight: [500, 450, 400, 400],
+          lazyType: "none",
+          parallax: {
+            type: "off",
+            origo: "slidercenter",
+            speed: 1000,
+            levels: [0],
+            type: "scroll",
+            disable_onmobile: "on"
+          },
+          shadow: 0,
+          spinner: "spinner2",
+          autoHeight: "off",
+          fullScreenAutoWidth: "off",
+          fullScreenAlignForce: "off",
+          fullScreenOffsetContainer: "",
+          fullScreenOffset: "",
+          disableProgressBar: "on",
+          hideThumbsOnMobile: "off",
+          hideSliderAtLimit: 0,
+          hideCaptionAtLimit: 0,
+          hideAllCaptionAtLilmit: 0,
+          debugMode: false,
+          fallbacks: {
+            simplifyAll: "off",
+            nextSlideOnWindowFocus: "off",
+            disableFocusListener: false,
+          }
+        });
+
+      }); /*ready*/
+    </script>
+    <script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us17.list-manage.com","uuid":"b8c8c80c572835f38f48857d0","lid":"4de9988043"}) })</script>
+
+<!-- JS end -->
+
+	</body>
+</html>

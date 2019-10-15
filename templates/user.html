@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<!--
+
+	Theme Name: Elementy
+	Description: HTML/CSS
+	Author: Abcgomel
+	Designed & Coded by Abcgomel
+
+-->
+
+<html ng-app="myApp">
+ 	<head>
+    <!-- import plugin script -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'></script>
+    <script src='../static/js/chartjs-plugin-zoom'></script>
+    <script src='../static/js/Hammer.min.js'></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113819959-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113819959-1');
+    </script>
+		<title>Simracing Valley - Tornando o AV Brasileiro cada vez mais forte</title>
+		<meta charset="utf-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<meta name="robots" content="index, follow" >
+		<meta name="keywords" content="HTML5 Template" >
+		<meta name="description" content="Simracing Valley - Tornando o AV Brasileiro cada vez mais forte" >
+		<meta name="author" content="Vladimir Azarushkin">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#2a2b2f">
+
+		<!-- FAVICONS -->
+    <link rel="shortcut icon" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+    <link rel="icon" sizes="192x192" href="images/favicon/icon-192x192.png">
+
+<!-- CSS -->
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,300%7COpen+Sans:400,300,700" rel="stylesheet" type="text/css">
+
+    <!-- REVOSLIDER CSS SETTINGS -->
+
+    <!-- ANGULAR SETTINGS FILES -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+    <script src='../static/js/app.js'></script>
+    <script src='../static/js/dirPagination.js'></script>
+
+    <!-- REVOLUTION STYLE SHEETS -->
+    <link href="../static/revo-slider/css/settings-custom.css" rel="stylesheet" type="text/css">
+
+    <!-- REVOLUTION NAVIGATION STYLES -->
+    <link rel="stylesheet" type="text/css" href="../static/revo-slider/css/navigation-skins/hermes-custom.css">
+
+    <!-- BOOTSTRAP -->
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->
+		<link rel="stylesheet" href="../static/css/icons-fonts.css" >
+
+    <!-- CSS THEME -->
+		<link rel="stylesheet" href="../static/css/style.css" >
+
+    <!-- ANIMATE -->
+		<link rel="stylesheet" href="../static/css/animate.min.css">
+
+    <!-- IE Warning CSS -->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie-warning.css" ><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie8-fix.css" ><![endif]-->
+
+    <!-- Magnific popup, Owl Carousel Assets in style.css -->
+
+<!-- CSS end -->
+
+<!-- JS begin some js files in bottom of file-->
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+
+		<!-- LOADER -->
+		<div id="loader-overflow">
+      <div id="loader3" class="loader-cont">Please enable JS</div>
+    </div>
+
+		<div id="wrap" class="boxed ">
+			<div class="grey-bg"> <!-- Grey BG  -->
+
+				<!--[if lte IE 8]>
+				<div id="ie-container">
+					<div id="ie-cont-close">
+						<a href="#" onclick="javascript&#058;this.parentNode.parentNode.style.display="none"; return false;"><img src="images/ie-warn/ie-warning-close.jpg" style="border: none;" alt="Close"></a>
+					</div>
+					<div id="ie-cont-content" >
+						<div id="ie-cont-warning">
+							<img src="images/ie-warn/ie-warning.jpg" alt="Warning!">
+						</div>
+						<div id="ie-cont-text" >
+							<div id="ie-text-bold">
+								You are using an outdated browser
+							</div>
+							<div id="ie-text">
+								For a better experience using this site, please upgrade to a modern web browser.
+							</div>
+						</div>
+						<div id="ie-cont-brows" >
+							<a href="http://www.firefox.com" target="_blank"><img src="images/ie-warn/ie-warning-firefox.jpg" alt="Download Firefox"></a>
+							<a href="http://www.opera.com/download/" target="_blank"><img src="images/ie-warn/ie-warning-opera.jpg" alt="Download Opera"></a>
+							<a href="http://www.apple.com/safari/download/" target="_blank"><img src="images/ie-warn/ie-warning-safari.jpg" alt="Download Safari"></a>
+							<a href="http://www.google.com/chrome" target="_blank"><img src="images/ie-warn/ie-warning-chrome.jpg" alt="Download Google Chrome"></a>
+						</div>
+					</div>
+				</div>
+				<![endif]-->
+
+				<!-- HEADER TOP BAR FONT BLACK NO TRANSPARENT NO MOBILE TRANSPARENT -->
+				<!--<header id="nav" class="header header-1 no-transparent mobile-no-transparent">
+        --><header id="nav" class="header">
+          <!-- TOP BAR -->
+          <div class="top-bar top-bar-black">
+            <div class="container-m-30 clearfix">
+
+              <!-- LEFT SECTION -->
+              <ul class="top-bar-section left display-xxs-no">
+                <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="http://www.simracingvalley.com">Home</a></li>
+                <li><a href="http://www.simracingvalley.com/quemsomos.html">Quem Somos?</a></li>
+                <li><a href="http://www.simracingvalley.com/faq.html">Como funciona?</a></li>
+              </ul>
+
+              <!-- RIGHT SECTION -->
+              <ul class="top-bar-section right">
+              <!--  <li><a href="tel:138376628"><i class="fa fa-phone mr-5"></i> 1-800-312-212</a></li>
+                <li><a href="contact.html"><i class="fa  fa-clock-o mr-5"></i> Mon - Fri: 08.00 - 17.00</a></li>-->
+                <li class="display-xxs-no"><a href="mailto:contato@simracingvalley.com" title="E-mail"><i class="fa fa-envelope mr-7"></i>contato@simracingvalley.com</a></li>
+              </ul>
+
+            </div>
+          </div>
+
+				  <div class="header-wrapper">
+            <div class="container-m-30 clearfix">
+              <div class="logo-row">
+
+						<!-- LOGO -->
+                <div class="logo-container-2">
+                  <div class="logo-2">
+                    <a href="http://www.simracingvalley.com" class="clearfix">
+                      <img src="../static/images/logo.png" class="logo-img" alt="Logo">
+                    </a>
+                  </div>
+                </div>
+					      </div>
+					    </div>
+
+					<!-- MAIN MENU CONTAINER -->
+					<div class="main-menu-container">
+            <div class="container-m-30 clearfix">
+              <!-- MAIN MENU -->
+							<div id="main-menu" >
+								 <nav class="navbar navbar-default">
+
+                    <!-- MAIN MENU LIST -->
+                    <nav class="collapse collapsing navbar-collapse right-1024">
+                      <ul class="nav navbar-nav">
+
+                        <!-- MENU ITEM -->
+                        <!--<div class="main-menu-container">-->
+
+              						<div class="container-m-30 clearfix">
+
+              								<!-- MAIN MENU -->
+              						   <div id="main-menu">
+              								  <div class="navbar navbar-default" role="navigation"></div>
+                                </div>
+
+
+
+
+				  <!-- END header-wrapper -->
+
+				</header>
+
+      <!-- FEATURES 7 -->
+        <style>
+        .container {
+            padding-right: 60px;
+            padding-left: 60px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .image {
+            opacity: 1;
+            display: block;
+            width: 30%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+          }
+
+          .container:hover .image {
+            opacity: 0.7;
+          }
+        </style>
+
+
+        <div class="page-section bg-yellow clearfix">
+          <div class="container">
+            <div class="fes7-img" style="background-image: url(images/fes7-constr2.jpg)"></div>
+          </div>
+
+          <div ng-controller="HomeCtrl" class="container p-60-cont">
+            <div class="row">
+              
+              <div class="col-md-6 fes7-text-cont p-140-cont">
+                <div class"image"><img src="{{ user.avatar }}"></div>
+                <h1><span class="font-light"><strong>{{user.username}}</strong></span></h1>
+
+                <div class="row">
+                  <form method="POST">
+                    <label>Escolha uma corrida!</label>
+                    <select id='selectBy' class="form-control" name="raceId" ng-model="raceresult" ng-change="selRace()">
+                      {% for race in racesList %}
+                      <option value="{{race.id}}" name="raceId">
+                        {{race.filename}}
+                      </option>
+                      {% endfor %}
+                    </select>
+                  </form>
+                <hr>
+              </div>
+            </div>
+            <div>
+              <table class="table table-striped table-hover table-responsive">
+                <thead class="thead-dark">
+                  <th>Piloto</th>
+                  <th>Posição</th>
+                  <th>Data: {{'{{date}}'}}</th>
+                </thead>
+                <tbody ng-repeat="item in result | orderBy:'position*1'">
+                  <tr>
+                    <td>{{'{{item.driver}}'}}</td>
+                    <td>{{'{{item.position}}'}}</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+          </div>
+
+          </div>
+          <!--end of row-->
+
+
+
+        <!-- VIEW MORE PROJECTS  -->
+        <div class="port-view-more-cont bg-white">
+          <h2>Histórico de {{driver.unique_name}}</h2>
+                <div class="count-number">
+                  {{driver.races_done}}
+                </div>
+                <div class="count-descr">
+                  <span class="count-title">Participações em Corridas</span>
+                </div>
+        </div>
+
+        
+
+        <div class="container p-140-cont">
+          <div class="row masonry">
+         
+              <!-- Post Item -->
+              <div class="col-md-6 col-md-offset-3 pb-90">
+                <div class="post-prev-img">
+                   <!-- bar chart canvas element -->
+              <center>
+                <canvas id="chart3" width="1000" height="800"></canvas>
+                <canvas id="chart1" width="1000" height="800"></canvas>
+                <canvas id="chart2" width="1000" height="800"></canvas>
+               
+
+            </center>
+              
+        
+                </div>
+                      
+              </div>
+          </div>
+        </div>
+
+        <!-- CLIENTS 1 & TESTIMONIALS 1 -->
+        <!--<div class="page-section p-110-cont">
+					<div class="container">
+
+            <div class="row">
+              <!-- CLIENTS 1 -->
+          <!--    <div class="col-md-7">
+                <div class="row client-row border-bot">
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+
+              
+                      <img alt="client" src="images/clients/1.png"> 
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+
+                     <img alt="client" src="images/clients/2.png"> 
+                    </div>
+
+                   <!-- <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/3.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/4.png">
+                    </div>
+
+                </div>
+
+                <div class="row client-row">
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/5.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/6.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/7.png">
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 text-center">
+                      <img alt="client" src="images/clients/8.png">
+                    </div>
+
+                </div>
+
+							</div>
+              <!-- TESTIMONIALS 1 -->
+      <!--        <div class="col-md-5">
+                <blockquote class="quote mb-0 pl-50-min-1169">
+                  <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Harum, maiores esse temporibus </p>
+                  <footer>John Doe, Google Inc.</footer>
+                 </blockquote>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+        <!-- DIVIDER -->
+		<!--		<hr class="mt-0 mb-0">
+
+        <!-- FAQ -->
+    <!--    <div class="page-section p-110-cont">
+          <div class="container">
+
+            <div class="row text-center">
+
+              <div class="col-md-12">
+                <div class="mb-50">
+								  <h2 class="section-title2 pr-0">FAQ</h2>
+								</div>
+							</div>
+
+						</div>
+            <div class="row">
+              <div class="col-md-6 mb-30">
+
+                  <!-- Toggle -->
+          <!--        <dl class="toggle">
+                    <dt>
+                      <a href="#">WHAT IS HTML?</a>
+                    </dt>
+                    <dd>
+                      HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages.
+                    </dd>
+                    <dt>
+                        <a href="#">WHAT IS TWITTER BOOTSTRAP?</a>
+                    </dt>
+                    <dd>
+                      Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions.
+                    </dd>
+                    <dt>
+                      <a href="#">WHAT IS CSS?</a>
+                    </dt>
+                    <dd>
+                      CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc.
+                    </dd>
+                  </dl>
+                  <!-- End Toggle -->
+
+      <!--        </div>
+
+              <div class="col-md-6 mb-30">
+                <div class="tabs-3">
+                  <ul class="nav nav-tabs bootstrap-tabs">
+                    <li class="active"><a href="#about-tab" class="a-inv" data-toggle="tab">ABOUT</a></li>
+                    <li><a href="#contact-tab" class="a-inv" data-toggle="tab">CONTACT</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane fade in active" id="about-tab">
+                      <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. </p>
+                    </div>
+                    <div class="tab-pane fade" id="contact-tab">
+                      <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+				<!-- ABOUT US 2 -->
+		<!--		<div class="page-section about-us-2-cont pt-100-cont">
+					<div class="container">
+
+            <div class="row">
+              <div class="col-md-12 text-center wow fadeInUp" data-wow-duration="1s">
+                <img src="images/team/team-all-constr.jpg" alt="img">
+              </div>
+            </div>
+
+					</div>
+        </div>
+
+        <!-- CALL TO ACTION  -->
+    <!--    <div class="port-view-more-cont-dark">
+          <a class="port-view-more-dark ls-norm font-light" href="contact.html">Let's Work Together</a>
+        </div>
+
+        <!-- BLOG 2 -->
+      <!--  <div class="page-section pt-110-b-30-cont">
+          <div class="container">
+
+            <div class="mb-50">
+              <h2 class="section-title2 pr-0">Latest News<a href="blog-right-sidebar.html" class="section-more right">All News</a>
+                  </h2>
+            </div>
+
+            <div class="row">
+
+              <!-- Post Item 1 -->
+          <!--    <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+
+                  <div class="col-md-4 blog2-post-title-cont">
+                    <div class="post-prev-date-cont">
+                      <span class="blog2-date-numb">21</span><span class="blog2-month">October</span>
+                    </div>
+                    <div class="post-prev-title">
+                      <h3><a href="blog-single-sidebar-right.html">Time For Minimalism</a></h3>
+                      <div class="post-prev-info">
+                        <a href="#">design</a><span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">john doe</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-8">
+                    <div class="blog2-post-prev-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Post Item 2 -->
+      <!--        <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+
+                  <div class="col-md-4 blog2-post-title-cont">
+                    <div class="post-prev-date-cont">
+                      <span class="blog2-date-numb">17</span><span class="blog2-month">August</span>
+                    </div>
+                    <div class="post-prev-title">
+                      <h3><a href="blog-single-sidebar-right.html">New Trends In Web</a></h3>
+                      <div class="post-prev-info">
+                        <a href="#">design</a><span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">john doe</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-8">
+                    <div class="blog2-post-prev-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Post Item 3 -->
+        <!--      <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+
+                  <div class="col-md-4 blog2-post-title-cont">
+                    <div class="post-prev-date-cont">
+                      <span class="blog2-date-numb">1</span><span class="blog2-month">August</span>
+                    </div>
+                    <div class="post-prev-title">
+                      <h3><a href="blog-single-sidebar-right.html">The Sound Of Life</a></h3>
+                      <div class="post-prev-info">
+                        <a href="#">design</a><span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">john doe</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-8">
+                    <div class="blog2-post-prev-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      -->
+          <!--  <div class="bs-component">-->
+      <!--  <div class="container">
+
+        <!-- NEWS LETTER
+        <div class="page-section nl-cont">
+          <div class="container">
+            <div class="col-sm-8">
+            	<h2 class="section-title2 font-light pr-0 nl-title">Newsletter</h2>
+            </div>
+            <div class="col-sm-4">
+            	<div class="relative" >
+            	  <div id="mc_embed_signup" class="nl-form-container clearfix">
+            	    <form action="http://abcgomel.us9.list-manage.com/subscribe/post-json?u=ba37086d08bdc9f56f3592af0&amp;id=e38247f7cc&amp;c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletterform validate" target="_blank" novalidate>   <!-- EDIT THIS ACTION URL (add "post-json?u" instead of "post?u" and appended "&amp;c=?" to the end of this URL) -->
+            	      <!--<input type="email" value="" name="EMAIL" class="email nl-email-input" id="mce-EMAIL" placeholder="Email address" required>
+            	      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            	      <!--<div style="position: absolute; left: -5000px;"><input type="text" name="b_ba37086d08bdc9f56f3592af0_e38247f7cc" tabindex="-1" value=""></div>
+
+            	      <button id="mc-embedded-subscribe" class="nl2-btn" type="submit" name="subscribe">
+            	            <span class="icon icon-arrows-slim-right"></span>
+            	          </button>
+            	    </form>
+            	    <div id="notification_container"  ></div>
+            	  </div>
+            	</div>
+            </div>
+          </div>
+        </div>
+      -->
+
+
+        <!-- FOOTER 4 BLACK WITH TWITTER FEED -->
+        <footer id="footer4" class="page-section pt-95 pb-50 footer2-black">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-3 col-sm-3 widget">
+                <div class="logo-footer-cont">
+                  <a href="http://www.simracingvalley.com">
+                    <img class="logo-footer" src="../static/images/logo-footer-white.png" alt="logo">
+                  </a>
+                </div>
+                <div class="footer2-text-cont">
+                  <address>
+                    Simracing Valley<br>
+                    O primeiro sistema de classificação de Pilotos Virtuais Brasileiros.
+                  </address>
+                </div>
+                <div class="footer2-text-cont">
+                  Contato:<br>
+                  <a class="a-text" href="mailto:contato@simracingvalley.com">contato@simracingvalley.com</a>
+                </div>
+                <!--<div class="footer2-text-cont a-text-main-cont">
+                  <a class="popup-gmaps mfp-plugin font-poppins" href="https://maps.google.com/maps?q=555+California+Street+Building,+California+Street,+San+Francisco,&amp;hl=en&amp;t=v&amp;hnear=555+California+Street+Building,+California+Street,+San+Francisco">Open Map</a>
+                </div> -->
+              </div>
+
+              <div class="col-md-2 col-sm-2 widget">
+                <h4>Menu</h4>
+                <ul class="links-list a-text-cont a-text-main-cont font-poppins">
+                  <li><a href="http://www.simracingvalley.com/index.html">Home</a></li>
+                  <li><a href="http://www.simracingvalley.com/faq.html">Como funciona?</a></li>
+                  <li><a href="http://www.simracingvalley.com/quemsomos.html">Quem somos?</a></li>
+                  <li><a href="mailto:contato@simracingvalley.com">Contato</a></li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-3 widget">
+                <h4>Parceiros</h4>
+                <ul class="links-list a-text-cont font-poppins" >
+                  <li><a href="http://www.f1bc.com">F1 Brasil Clube</a></li>
+                  <li><a href="http://www.iracingbrasil.com">iRacing Brasil</a></li>
+                </ul>
+              </div>
+
+              <!-- TWITTER FEEDS
+              <div class="col-md-4 col-sm-4 widget">
+                <h4>Recent Tweets</h4>
+                <div id="twitter-feeds"></div>
+              </div>
+
+            </div>-->
+
+            <!-- SUB FOOTER -->
+            <div class="footer2-copy-cont clearfix">
+              <!-- Social Links -->
+              <div class="footer2-soc-a right">
+                <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+              </div>
+
+              <!-- Copyright -->
+              <div class="left">
+                <a class="footer2-copy" href="http://www.simracingvalley.com" target="_blank">&copy; Simracing Valley - 2018</a>
+              </div>
+
+            </div>
+
+          </div>
+        </footer>
+
+				<!-- BACK TO TOP -->
+				<p id="back-top">
+          <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
+        </p>
+
+			</div><!-- End BG -->
+		</div><!-- End wrap -->
+
+<!-- JS begin -->
+
+		<!-- jQuery  -->
+		<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+		<!-- MAGNIFIC POPUP -->
+		<script src="../static/js/jquery.magnific-popup.min.js"></script>
+
+    <!-- PORTFOLIO SCRIPTS -->
+    <script type="text/javascript" src="../static/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="../static/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="../static/js/masonry.pkgd.min.js"></script>
+
+    <!-- APPEAR -->
+    <script type="text/javascript" src="../static/js/jquery.appear.js"></script>
+
+    <!-- OWL CAROUSEL -->
+    <script type="text/javascript" src="../static/js/owl.carousel.min.js"></script>
+
+    <!-- JQUERY TWEETS -->
+		<script src="../static/js/twitter/jquery.tweet.js"></script>
+
+    <!-- MAIN SCRIPT -->
+		<script src="../static/js/main.js"></script>
+
+		<!-- REVOSLIDER SCRIPTS  -->
+    <script src="../static/revo-slider/js/jquery.themepunch.tools.min.js" type="text/javascript">
+    </script>
+    <script src="../static/revo-slider/js/jquery.themepunch.revolution.min.js" type="text/javascript">
+    </script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS
+      (Load Extensions only on Local File Systems !
+      The following part can be removed on Server for On Demand Loading) -->
+    <script src="../static/revo-slider/js/extensions/revolution.extension.actions.min.js" type="text/javascript"></script>
+    <script src="../static/revo-slider/js/extensions/revolution.extension.carousel.min.js" type="text/javascript"></script>
+    <script src="../static/revo-slider/js/extensions/revolution.extension.kenburn.min.js" type="text/javascript"></script>
+    <script src="../static/revo-slider/js/extensions/revolution.extension.layeranimation.min.js" type="text/javascript">
+    </script>
+    <script src="../static/revo-slider/js/extensions/revolution.extension.migration.min.js" type="text/javascript"></script>
+    <script src="../static/revo-slider/js/extensions/revolution.extension.navigation.min.js" type="text/javascript"></script>
+    <script src="../static/revo-slider/js/extensions/revolution.extension.parallax.min.js" type="text/javascript"></script>
+    <script src="../static/revo-slider/js/extensions/revolution.extension.slideanims.min.js" type="text/javascript"></script>
+    <script src="../static/revo-slider/js/extensions/revolution.extension.video.min.js" type="text/javascript"></script>
+
+    <!-- SLIDER REVOLUTION INITIALIZATION  -->
+    <script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us17.list-manage.com","uuid":"b8c8c80c572835f38f48857d0","lid":"4de9988043"}) })</script>
+
+<!-- JS end -->
+    <script>
+ 
+   // bar chart data
+   var ratingData = {
+   labels : [{% for item in ratinglabels %}
+                  "{{item}}",
+              {% endfor %}],
+   datasets : [
+      {
+            label: 'Histórico de Pontos',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            borderColor: "rgba(0,0,160,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in ratingvalues %}
+                      {{item}},
+                    {% endfor %}]
+      },
+      {
+            label: '"Range" de Erro',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            borderColor: "rgba(0,130,130,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in ratingrange %}
+                      {{item}},
+                    {% endfor %}]
+      }]
+   }
+ 
+   // get bar chart canvas
+   var mychart = document.getElementById("chart1").getContext("2d");
+   
+   steps = 10
+   max = 10
+   // draw bar chart
+   var LineChartDemo = new Chart(mychart, {
+        type: 'line',
+        data: ratingData,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        },
+        pan: {
+              // Boolean to enable panning
+              enabled: true,
+
+              // Panning directions. Remove the appropriate direction to disable 
+              // Eg. 'y' would only allow panning in the y direction
+              mode: 'xy'
+          },
+
+          // Container for zoom options
+          zoom: {
+              // Boolean to enable zooming
+              enabled: true,
+
+              // Zooming directions. Remove the appropriate direction to disable 
+              // Eg. 'y' would only allow zooming in the y direction
+              mode: 'xy'}
+      },
+          
+     });
+
+
+// bar chart data
+   var incidentData = {
+   labels : [{% for item in incidentlabels %}
+                  "{{item}}",
+              {% endfor %}],
+   datasets : [
+      {
+            label: 'Média Incidentes por corrida',
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            borderColor: "rgba(255,0,0,0.3)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in incidentaverage %}
+                      {{item}},
+                    {% endfor %}] 
+
+      }]
+   }
+
+    Chart.defaults.global.animationSteps = 50;
+    Chart.defaults.global.tooltipYPadding = 16;
+    Chart.defaults.global.tooltipCornerRadius = 0;
+    Chart.defaults.global.tooltipTitleFontStyle = "normal";
+    Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+    Chart.defaults.global.animationEasing = "easeOutBounce";
+    Chart.defaults.global.responsive = true;
+    Chart.defaults.global.scaleLineColor = "black";
+    Chart.defaults.global.scaleFontSize = 16;
+ 
+   // get bar chart canvas
+   var mysecondchart = document.getElementById("chart2").getContext("2d");
+   
+   steps = 10
+   max = 10
+   // draw bar chart
+   var LineChartDemo = new Chart(mysecondchart, {
+        type: 'line',
+        data: incidentData,
+        scaleOverride: true,
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        }
+      }
+ 
+   });
+
+   var top10Data = {
+   labels : ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', 'Poles'],
+   datasets : [
+      {
+            label: 'TOP 10 & Pole Positions',
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            borderColor: "rgba(120,36,216,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in top10list %}
+                      {{item}},
+                    {% endfor %}] 
+
+      }]
+   }
+ //console.log(top10Data)
+ 
+ var mythirdchart = document.getElementById("chart3").getContext("2d");
+
+ var LineChartDemo = new Chart(mythirdchart, {
+        type: 'radar',
+        data: top10Data,
+        scaleOverride: true,
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        }
+      }
+ 
+   });
+    </script>
+
+	</body>
+</html>

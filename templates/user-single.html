@@ -1,0 +1,1300 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp" lang = "en">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+    	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113819959-1"></script>
+    	<script>
+      	window.dataLayer = window.dataLayer || [];
+	      function gtag(){dataLayer.push(arguments);}
+	      gtag('js', new Date());
+
+	      gtag('config', 'UA-113819959-1');
+	    </script>
+
+
+	  {% if current_user.is_authenticated == true %}
+      {% if current_user.user_obj()['sponsor'] == false %}
+      <script> console.log('APOIE O SIMRACING VALLEY')</script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2262399589748995",
+            enable_page_level_ads: true
+       });
+      </script>
+      {% else %}
+      {% endif %}
+      {% else %}
+      <script> console.log('APOIE O SIMRACING VALLEY')</script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+       (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2262399589748995",
+            enable_page_level_ads: true
+       });
+      </script>
+      {% endif %}
+		<meta charset="utf-8" />
+		<title>Simracing Valley | {{ user.username }} </title>
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta property="og:type" content="company" />
+		<meta property="og:title" content="Simracing Valley" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<meta property="og:url" content="{{ url_for('login')}} " />
+		<meta property="og:site_name" content="Simracing Valley" />
+
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/reset.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../static/css/dat-menu.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../static/css/main-stylesheet.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../static/css/responsive.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:300,400,700|Source+Sans+Pro:300,400,600,700&amp;subset=latin,latin-ext" />
+
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'></script>
+	    <script src='../static/js/chartjs-plugin-zoom'></script>
+	    <script src='../static/js/Hammer.min.js'></script>
+	    <script>
+	    setTimeout(function(){
+   			window.location.reload(1);
+			}, 120000);
+	    </script>
+		<!--[if lt IE 9 ]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style>
+			/* Man content & sidebar top lne, default #256193 */
+			#sidebar .panel,
+			#main-box #main {
+				border-top: 5px solid #256193;
+			}
+
+			/* Slider colors, default #256193 */
+			a.featured-select,
+			#slider-info .padding-box ul li:before,
+			.home-article.right ul li a:hover {
+				background-color: #256193;
+			}
+
+			/* Button color, default #256193 */
+			.panel-duel-voting .panel-duel-vote a {
+				background-color: #256193;
+			}
+
+			/* Menu background color, default #000 */
+			#menu-bottom.blurred #menu > .blur-before:after {
+				background-color: #000;
+			}
+
+			/* Top menu background, default #0D0D0D */
+			#header-top {
+				background: #0D0D0D;
+			}
+
+			/* Sidebar panel titles color, default #333333 */
+			#sidebar .panel > h2 {
+				color: #333333;
+			}
+
+			/* Main titles color, default #353535 */
+			#main h2 span {
+				color: #353535;
+			}
+
+			/* Selection color, default #256193 */
+			::selection {
+				background: #256193;
+			}
+
+			/* Links hover color, default #256193 */
+			.article-icons a:hover,
+			a:hover {
+				color: #256193;
+			}
+
+			/* Image hover background, default #256193 */
+			.article-image-out,
+			.article-image {
+				background: #256193;
+			}
+
+			/* Image hover icons color, default #256193 */
+			span.article-image span .fa {
+				color: #256193;
+			}
+			/* Outer */
+			.popup {
+			z-index: 9999;
+			width:100%;
+			height:100%;
+			display:none;
+			position:fixed;
+			top:0px;
+			left:0px;
+			background:rgba(0,0,0,0.75);
+			}
+			/* Inner */
+			.popup-inner {
+			max-width:700px;
+			width:70%;
+			padding:40px;
+			position:absolute;
+			z-index: 1000;
+			top:50%;
+			left:50%;
+			-webkit-transform:translate(-50%, -50%);
+			transform:translate(-50%, -50%);
+			box-shadow:0px 2px 6px rgba(0,0,0,1);
+			border-radius:3px;
+			background:#fff;
+			}
+			/* Close Button */
+			.popup-close {
+			width:5%;
+			height:5%;
+			padding-top:6px;
+			display:inline-block;
+			position:absolute;
+			z-index: 1001;
+			top:0px;
+			right:0px;
+			transition:ease 0.25s all;
+			-webkit-transform:translate(50%, -50%);
+			transform:translate(50%, -50%);
+			border-radius:1000px;
+			background:rgba(0,0,0,0.8);
+			font-family:Arial, Sans-Serif;
+			font-size:20px;
+			text-align:center;
+			line-height:100%;
+			color:#fff;
+			}
+			.popup-close:hover {
+			-webkit-transform:translate(50%, -50%) rotate(180deg);
+			transform:translate(50%, -50%) rotate(180deg);
+			background:rgba(0,0,0,1);
+			text-decoration:none;
+			}
+			input[type=text], select {
+		    width: 100%;
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+			}		
+
+			input[type=submit] {
+		    width: 100%;
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 14px 20px;
+		    margin: 8px 0;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+			}
+
+			input[type=submit]:hover {
+		    background-color: #45a049;
+			}
+			
+
+			 }
+		</style>
+	</head>
+	<body class="no-slider">
+	<!-- <body class="has-top-menu"> -->
+		<!-- BEGIN #slider-imgs -->
+		<div id="slider-imgs">
+			<div class="featured-img-box">
+				<div id="featured-img-1" class="featured-img"></div>
+				<div id="featured-img-2" class="featured-img invisible"></div>
+				<div id="featured-img-3" class="featured-img invisible"></div>
+				<div id="featured-img-4" class="featured-img invisible"></div>
+			</div>
+		<!-- END #slider-imgs -->
+		</div>
+
+		<!-- BEGIN #top-layer -->
+		{% if user.sponsor == false %}
+		<div id="top-layer">
+		{% else %}
+		<div id="top-layer-apoiador">
+			{% endif %}
+			<div id="header-top">
+				
+				<div class="wrapper">
+					<ul class="right">
+						<li><a href="https://www.facebook.com/simracingvalley/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+						<!--<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-twitch"></i></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-steam"></i></a></li>-->
+					</ul>
+					<ul class="load-responsive" rel="Top menu">
+						<li><a href="{{ url_for('login') }}"> <i class="fa fa-home"></i> Home</a></li>
+		                <li><a href="{{ url_for('showDriverList') }}"><i class="fa fa-list"></i> Ranking</a></li>
+		                <li><a href="{{ url_for('schedulerace') }}"><i class="fa fa-calendar"></i> Marcar corrida</a></li>
+		                <li><a href="{{ url_for('login') }}static/others/Manual_SV.pdf"><i class="fa fa-file-text"></i> Manual SV</a></li>
+						
+						
+						<!--<li><a href="#drop-the-bass">Read Later<small>2</small></a>
+							<div class="drop">
+								<div class="notify-header">Articles I should to read later</div>
+								<!-- <div class="nofify-empty">
+									<i class="fa fa-folder-open-o"></i>
+									<b>No articles here yet</b>
+									<span>You can save articles to read them later</span>
+								</div> 
+								<ol class="notify-list">
+									<li>
+										<a href="post.html" class="notify-content">
+											<span class="article-thumb"><img src="images/photos/image-35.jpg" alt="" /></span>
+											<span class="notify-head">
+												<span class="notify-user"><b>Lorem Ipsum</b></span>
+											</span>
+											<span class="notify-text">Facete eruditi an vis, vel utamur aliquid partiendo ex</span>
+											<span class="notify-date">11:22, Sep 11, 2012</span>
+										</a>
+									</li>
+									<li>
+										<a href="post.html" class="notify-content">
+											<span class="article-thumb"><img src="images/photos/image-36.jpg" alt="" /></span>
+											<span class="notify-head">
+												<span class="notify-user"><b>Lorem Ipsum 2</b></span>
+											</span>
+											<span class="notify-text">Te deserunt eleifend usu, patrioque eloquentiam qui in</span>
+											<span class="notify-date">11:22, Sep 11, 2012</span>
+										</a>
+									</li>
+								</ol>
+								<div class="notify-footer"><a href="#clear-read-later">Clear this list</a></div>
+							</div>
+						</li>-->
+						{% if current_user.is_authenticated %}
+						<li><a href="{{ url_for('driver', userid=current_user.get_id()) }}"><i class="fa fa-user"></i> {{ current_user.get_username() }}</a></li>
+                		<li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i> SAIR</a></li>
+						{% else %}						
+						{% endif %}
+						
+					</ul>
+				</div>
+			</div>
+			<section id="content">
+				<header id="header" class="needsmallpadding">
+					<div id="menu-bottom">
+						<!-- <nav id="menu" class="main-menu width-fluid"> -->
+						<nav id="menu" class="main-menu">
+							<div class="blur-before"></div>
+							<a href="{{ url_for('login') }}" class="header-logo left"><img src="../static/images/logo-white.png" class="logo" alt="Revelio" title="" /></a>
+							<a href="#dat-menu" class="datmenu-prompt"><i class="fa fa-bars"></i>Menu</a>
+							<ul class="load-responsive" rel="Main menu">
+								<li><a href="#"><span><i class="fa fa-car"></i><strong>CORRIDAS & Agenda</strong></span></a>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="{{url_for('agenda')}}" > Inscreva-se para um Evento</a></li>
+									</ul>
+								</li>
+								</li>
+								<li><a href="#"><span><i class="fa fa-th-list"></i><strong>Resultados</strong></span></a>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="{{ url_for('results') }}"> Resultados</a></li>
+										<li><a href="{{url_for('trackrecords')}}"> Records</a></li>
+										<li><a href="#"> Podiums (Em construção)</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><i class="fa fa-trophy"></i><strong>Ligas e Copas</strong></a></li>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="#">Em construção</a></li>
+									</ul>
+								<li><a href="#"><span><i class="fa fa-comments-o"></i><strong>Discord & Facebook</strong></span></a>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="https://www.facebook.com/groups/302431040496313/">Grupo no Facebook</a></li>
+										<li><a href="https://discord.gg/8AnvSS2">Acesse o Discord</a></li>
+										<div style="border: 1px solid;"></div>
+										<div><iframe src="https://discordapp.com/widget?id=352886807647748106&theme=dark" width="240" height="500" allowtransparency="true" frameborder="0"></iframe></div>
+										
+										
+									</ul>
+								</li>
+								<li><a href="#"><span><i class="fa fa-users"></i><strong>Equipes</strong></span></a>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="#">Minha Equipe (Em construção)</a></li>
+										<li><a href="#">Equipes (Em construção)</a></li>
+									</ul>
+								</li>
+								<!-- <li class="no-icon"><a href="#"><strong>Without icon</strong></a></li> -->
+							</ul>
+						</nav>
+						
+					</div>
+				</header>
+				<div id="main-box" class="full-width">
+					{% if user.sponsor == false %}
+					<div id="main">
+					{% else %}
+					<div id="main-apoiador">
+					{% endif %}
+					
+						
+						<!-- BEGIN .user-profile -->
+						<div class="user-profile">
+							
+							<div class="profile-shadow"></div>
+
+							<!-- BEGIN .profile-left-side -->
+							<div class="profile-left-side">
+								{% if user.sponsor == false %}
+								<div class="the-profile-top">
+								{% else %}
+								<div class="the-profile-top-apoiador">
+									{% endif %}
+									<div class="profile-user-name">
+										<h1>{{ user.username }}</h1>
+										<!--<div class="sttaa"><span>Última Corrida:</span>"<a href="automobilista/race">"AUTOMOBILISTA: Montana CUP</a>"</div>-->
+									</div>
+									{% if user.sponsor == true %}
+									<div class="avatar apoiador">
+										<div class="avatar-button">
+											{% if current_user.get_id() ==  userid %}
+											<a href="#" data-popup-open="popup-2"><i class="fa fa-camera-retro"></i>Atualizar Avatar</a>
+											{% endif %}
+										</div>
+
+										<img style="width: 220px; height: 100%;" src="{{user.avatar}}" class="setborder" alt="" />
+									</div>
+									{% else %}
+									<div class="avatar piloto">
+										<div class="avatar-button">
+											{% if current_user.get_id() ==  userid %}
+											<a href="#" data-popup-open="popup-2"><i class="fa fa-camera-retro"></i>Atualizar Avatar</a>
+											{% endif %}
+										</div>
+
+										<img style="width: 220px; height: 100%;" src="{{user.avatar}}" class="setborder" alt="" />
+									</div>
+									{% endif %}
+									
+
+									<div class="popup" data-popup="popup-2">
+													<div class="popup-inner col-md-6 form-group">
+														<h2>Atualizar Avatar</h2>
+														<p></p>
+														<div>
+											               	
+														                  
+														              <form action="{{ url_for('photoupload', userid=userid) }}" method="POST">
+														                <dl>
+
+														                 {{ form.csrf_token }}
+														          	     <dt>{{ formuploadphoto.photo.label }}</dt>
+														                 <dd>{{ formuploadphoto.photo(class_="form-control", style_="width:100%;") }}</dd>
+														             </dl>
+														                
+														                <button class="btn btn-lg btn-primary btn-block" type="submit">ATUALIZAR AVATAR</button>
+														            </center>
+											            </div>		
+											        </form>
+											        
+
+
+														<a data-popup-close="popup-2" href="#"><button style=" width: 5%; height: 15%;" class="btn btn-sm btn-danger btn-block">FECHAR JANELA</button></a></p>
+														<a class="popup-close" data-popup-close="popup-2" href="#">x</a>
+														
+													</div>
+												</div>
+									<div>
+										<ul class="user-button-list">
+											<li><span class="info-msg"><i>"{{user.phrase}}"</i></span></li>
+										</ul>
+
+										<div class="user-panel-about">
+											<div>
+												<b><i class="fa fa-male"></i>Sobre mim</b>
+												<p>{{ user.about }}</p>
+											</div>
+
+											<div class="user-achievements">
+												<b><i class="fa fa-trophy"></i>Conquistas</b>
+												<p>
+													{% for achievement in driver.achievements %}
+													<span class="ach strike-tooltip" title="{{achievement.achi_name}}"><i style="{{achievement.fa_style}}"class="{{achievement.fa_image}}"></i></span>
+													{% endfor %}
+													
+												</p>
+											</div>
+										</div>
+
+										<ul class="user-button-list">
+											<!--<li><a href="messages-write.html" class="defbutton profile-button"><i class="fa fa-comment"></i>Private message</a></li>
+											<li><a href="#" class="defbutton profile-button"><i class="fa fa-coffee"></i>Follow him</a></li>-->
+											{% if current_user.get_id() ==  userid %}
+											<li><a href="#" data-popup-open="popup-1" class="defbutton profile-button disabled"><i class="fa fa-wrench"></i>Editar perfil</a></li>
+											{% endif %}
+											{% if current_user.get_id() !=  userid %}
+											<li><a href="#" class="defbutton profile-button disabled"><i class="fa fa-ban"></i>Reportar esse usuário (Em construção!)</a></li>
+											{% endif %}
+										</ul>
+												<div class="popup" data-popup="popup-1">
+													<div class="popup-inner col-md-6 form-group">
+														<h2>Editar Perfil</h2>
+														<p></p>
+														<div>
+														               
+														                  
+														              <form action="{{ url_for('updateProfile', userid=userid) }}" method="POST">
+														                <dl>
+
+														                 {{ form.csrf_token }}
+														                 <dt>{{ form.phrase.label }}</dt>
+														                 <dd>{{ form.phrase(class_="form-control", style_="width:100%;") }}</dd>
+														                 <dt>{{ form.about.label }}</dt>
+													                	 <dd>{{ form.about(class_="form-control") }}</dd>
+														                 <dt>{{ form.name.label}}</dt>
+													                	 <dd>{{ form.name(class_="form-control") }}</dd>
+														                 <dt>{{ form.lastname.label }}</dt>
+														                 <dd>{{ form.lastname(class_="form-control") }}</dd>
+														                 <dt>{{ form.gender.label }}</dt>
+														                 <dd>{{ form.gender(class_="form-control") }}</dd>
+														                 <dt>{{ form.birthday.label }}</dt>
+														                 <dd>{{ form.birthday(class_="form-control") }}</dd>
+													                	 <dt>{{ form.state.label }}</dt>
+														                 <dd>{{ form.state(class_="form-control") }}</dd>
+														                 <dt>{{ form.city.label }}</dt>
+														                 <dd>{{ form.city(class_="form-control") }}</dd>
+														             </dl>
+														                
+														                <button class="btn btn-lg btn-primary btn-block" type="submit">ATUALIZAR DADOS</button>
+														            </center>
+														        </form>
+											            </div>
+
+
+														<a data-popup-close="popup-1" href="#"><button class="btn btn-sm btn-danger btn-block">FECHAR JANELA</button></a></p>
+														<a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+													</div>
+												</div>
+									</div>
+								</div>
+								
+								<!--<div class="the-profile-navi">
+									<ul class="profile-navi">
+										<li><a href="#top"><span class="left-avatar"><img src="images/photos/avatar-1.jpg" alt="" /></span>Viewing <b>Datcouch</b> profile<br />Back to top<span class="clear-float"></span></a></li>
+										<li class="active"><a href="user-single.html"><i class="fa fa-globe"></i>Profile information</a></li>
+										<li><a href="user-single-guestbook.html"><i class="fa fa-comment-o"></i>Guest book</a></li>
+										<li><a href="user-single-comments.html"><i class="fa fa-comment"></i>My comments</a></li>
+										<li><a href="user-single-blog.html"><i class="fa fa-book"></i>Personal blog</a></li>
+										<li><a href="user-single-music.html"><i class="fa fa-music"></i>Music playlist</a></li>
+										<li><a href="user-single-friends.html"><i class="fa fa-users"></i>Friends<span class="notif">10</span></a></li>
+										<li><a href="user-single-threads.html"><i class="fa fa-comments-o"></i>Forum topics<span class="notif">66</span></a></li>
+										<li><a href="user-single-instagram.html"><i class="fa fa-camera-retro"></i>Instagram photos</a></li>
+									</ul>
+									
+									<div class="profile-panel instagram">
+										<div class="pieces">
+											<a href="https://instagram.com/marcisbee/" target="_blank"><img src="https://scontent-fra.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10576140_778241095547266_331905980_n.jpg" alt="" /></a>
+											<a href="https://instagram.com/marcisbee/" target="_blank"><img src="https://scontent-fra.cdninstagram.com/hphotos-xpa1/outbound-distilleryimage1/t0.0-17/OBPTH/427393eef7af11e2b65722000a9e00be_7.jpg" alt="" /></a>
+											<a href="https://instagram.com/marcisbee/" target="_blank"><img src="https://scontent-fra.cdninstagram.com/hphotos-xpa1/outbound-distilleryimage5/t0.0-17/OBPTH/3259ed5670c711e2a9dd22000a9e29a7_7.jpg" alt="" /></a>
+										</div>
+										<div class="clear-float"></div>
+									</div>
+								</div>-->
+
+							<!-- END .profile-left-side -->
+							</div>
+
+							<!-- BEGIN .profile-right-side -->
+							<div class="profile-right-side">
+								<div>
+							<div style="color: white; background: #f55; width: 100%; font-size: 24px; margin-bottom: 10px; text-align: center;">
+			                {% with messages = get_flashed_messages() %}
+			                {% if messages %}
+			                {% for message in messages %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {% endif %}
+			                {% endwith %}
+			                {%for message in form.phrase.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.about.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.name.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.lastname.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.gender.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.birthday.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.state.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in form.city.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                {%for message in formuploadphoto.photo.errors %}
+			                <div>{{ message }}</div>
+			                {% endfor %}
+			                
+
+			                </div>
+			            </div>
+
+								<h2><span>Perfil</span></h2>
+								
+								
+								<!-- BEGIN .content-padding -->
+								<div class="content-padding">
+
+									<!-- BEGIN .info-blocks -->
+									<div class="info-blocks">
+										<ul>
+											{% if user.sponsor == false %}
+											<li><a href="#" class="info-block"><b>{{ driver.points }}</b><span>Valley Points</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.incidents }}</b><span>Incident Points</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.pole }}</b><span>Poles</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.races_done }}</b><span>Corridas</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.top3 }}</b><span>Top 3</span></a></li>
+											<li><a href="#" class="info-block"><b>{{ driver.first }}</b><span>Vitórias</span></a></li>
+											{% else %}
+											<li><a href="#" class="info-block-apoiador"><b>{{ driver.points }}</b><span>Valley Points</span></a></li>
+											<li><a href="#" class="info-block-apoiador"><b>{{ driver.incidents }}</b><span>Incident Points</span></a></li>
+											<li><a href="#" class="info-block-apoiador"><b>{{ driver.pole }}</b><span>Poles</span></a></li>
+											<li><a href="#" class="info-block-apoiador"><b>{{ driver.races_done }}</b><span>Corridas</span></a></li>
+											<li><a href="#" class="info-block-apoiador"><b>{{ driver.top3 }}</b><span>Top 3</span></a></li>
+											<li><a href="#" class="info-block-apoiador"><b>{{ driver.first }}</b><span>Vitórias</span></a></li>
+											{% endif %}
+											
+											
+										</ul>
+										<div class="clear-float"></div>
+									<!-- END .info-blocks -->
+									</div>
+									
+									<div>
+										<div style="width:350px; margin-right: 50%;" class="left">
+											<h2 style="margin-left:-30px;"><span>Informação</span></h2></div>
+										
+											<ul class="profile-info">
+												<li>
+													<span class="first">Nome, Sobrenome:</span>
+													<span class="last">{{ user.name }} {{ user.lastname }}</span>
+												</li>
+												<li>
+													<span class="first">Classe:</span>
+													<span class="elo"><b><img style="max-width: 60%;" src="{{url_for('login')}}static/images/{{driver.classimg }}"></b></span>
+												<li>
+													<span class="first">Sexo:</span>
+													<span class="last">{{ user.gender }}</span>
+												</li>
+												<li>
+													<span class="first">Data de Nascimento:</span>
+													<span class="last">{{ user.birthday }}</span>
+												</li>
+												<li>
+													<span class="first">Estado, Cidade:</span>
+													<span class="last">{{ user.state }}, {{ user.city }}</span>
+												</li>
+												<li>
+													<span class="first">Cadastrou-se em:</span>
+													<span class="last">{{ driver.signedin }}</span>
+												</li>
+											</ul>
+										
+
+											<div class="clear-float"></div>
+										</div>
+
+										<div style="width:300px;" class="right">
+											
+											<!--<h2 style="margin-left: -30px;"><span>Friends (202)</span></h2>
+											
+											<ul class="profile-friends-list">
+												<li>
+													<a href="user-single.html" class="avatar online user-tooltip">
+														<img src="images/photos/avatar-1.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar online user-tooltip">
+														<img src="images/photos/avatar-2.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar away user-tooltip">
+														<img src="images/photos/avatar-4.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar ingame user-tooltip">
+														<img src="images/photos/avatar-5.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-6.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-7.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-14.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-15.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-16.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-17.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-18.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+												<li>
+													<a href="user-single.html" class="avatar offline user-tooltip">
+														<img src="images/photos/avatar-19.jpg" class="setborder" title="" alt="" />
+													</a>
+												</li>
+											</ul>
+											<div class="clear-float"></div>
+
+											<a href="user-single-friends.html" class="defbutton"><i class="fa fa-users"></i>View all 202 friends</a>-->
+											
+										</div>
+
+										<div class="clear-float"></div>
+									</div>
+									
+									<!--<div class="photo-blocks">
+										<ul>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments"><span>101</span></span><span class="article-image"><img src="http://distilleryimage10.s3.amazonaws.com/e7b6a2329d6f11e2be5722000a9f15cb_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments inactive"><span>23</span></span><span class="article-image"><img src="http://distilleryimage6.s3.amazonaws.com/74cada18729f11e2beb322000aaa0754_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments"><span>6</span></span><span class="article-image"><img src="http://distilleryimage5.s3.amazonaws.com/948b75cc967311e29b3722000a1fa50e_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments"><span>12</span></span><span class="article-image"><img src="http://distilleryimage11.s3.amazonaws.com/b62786f06ccd11e28a5622000a1fbe35_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+											<li><a href="user-single-instagram-single.html" class="article-image-out"><span class="image-comments inactive"><span>0</span></span><span class="article-image"><img src="http://distilleryimage8.s3.amazonaws.com/5e7dfe7270b811e286b422000a9d0dd8_6.jpg" width="128" height="128" alt="" title="" /></span></a></li>
+										</ul>
+										<div class="clear-float"></div>
+									</div>
+									
+									<div>
+										<center>
+											<a href="user-single-instagram.html" class="defbutton"><i class="fa fa-camera-retro"></i>View all instagram photos</a>
+										</center>
+									</div>-->
+									
+									<!-- BEGIN .music-blocks -->
+									
+									<h2 style="margin-right: 50%"><span>Histórico do piloto</span></h2>
+
+									{% if c_user == none or c_user.sponsor == false %}
+									<div class="music-blocks">
+										<center>
+											<a href="https://apoia.se/valleyalliance">
+												<img src="{{url_for('login')}}static/images/restricted.png">
+											</a>
+										</center>
+									</div>
+
+									{% else %}
+
+									
+									<div ng-controller="HomeCtrl" class="music-blocks">
+										<center>
+											<dl>
+												<dt><canvas id="chart3" width="500" height="400"></canvas></dt>
+								                <dt><canvas id="chart1" width="500" height="400"></canvas></dt>
+								                <dt><canvas id="chart2" width="500" height="400"></canvas></dt>
+								                <dt><canvas id="chart4" width="500" height="400"></canvas></dt>
+											</ul>
+											<div class="clear-float"></div>
+										</center>
+									<!-- END .music-blocks -->
+									</div>
+									{% endif %}
+
+								
+									
+								<!-- END .content-padding -->
+								</div>
+
+
+								<!--<h2><span>Guest Book</span></h2>-->
+								<!-- BEGIN .content-padding -->
+								<!--<div class="content-padding">
+									
+									<div class="comment-part">
+
+										<!-- BEGIN #comments -->
+										<!--<ol id="comments">
+											<li>
+												<div class="comment-inner">
+													<div class="comment-avatar">
+														<img src="http://1.gravatar.com/avatar/b1c65c520efb9520269584aae4323fae?s=73&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D73&amp;r=G" alt="DatCouch">
+													</div>
+													<div class="comment-content">
+														<div class="comment-header">
+															<h3><a href="#">DatCouch</a></h3>
+														</div>
+														<p>Lorem ipsum dolor sit amet, ea rebum aeterno qui, cum tale dicta nihil id. Ex eam simul altera. Te sea labores persequeris. An suscipit menandri vel, est error nullam dictas ne. Debet instructior ea pri, vis singulis antiopam consulatu ex.</p>
+														<a class="comment-reply-link post-a" href="#"><i class="fa fa-comment"></i><strong>Reply</strong></a>
+														<span class="post-a"><i class="fa fa-calendar-o"></i> May 2, 2014</span>
+													</div>
+												</div>
+												<ul>
+													<li>
+														<div class="comment-inner">
+															<div class="comment-avatar">
+																<img src="http://1.gravatar.com/avatar/b1c65c520efb9520269584aae4323fae?s=73&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D73&amp;r=G" alt="DatCouch">
+															</div>
+															<div class="comment-content">
+																<div class="comment-header">
+																	<h3><a href="#">DatCouch</a></h3>
+																</div>
+																<p>Lorem ipsum dolor sit amet, ea rebum aeterno qui, cum tale dicta nihil id. Ex eam simul altera. Te sea labores persequeris. An suscipit menandri vel, est error nullam dictas ne. Debet instructior ea pri, vis singulis antiopam consulatu ex.</p>
+																<a class="comment-reply-link post-a" href="#"><i class="fa fa-comment"></i><strong>Reply</strong></a>
+																<span class="post-a"><i class="fa fa-calendar-o"></i> May 2, 2014</span>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<div class="comment-inner">
+													<div class="comment-avatar">
+														<img src="http://1.gravatar.com/avatar/b1c65c520efb9520269584aae4323fae?s=73&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D73&amp;r=G" alt="DatCouch">
+													</div>
+													<div class="comment-content">
+														<div class="comment-header">
+															<h3><a href="#">DatCouch</a></h3>
+														</div>
+														<p>Lorem ipsum dolor sit amet, ea rebum aeterno qui, cum tale dicta nihil id. Ex eam simul altera. Te sea labores persequeris. An suscipit menandri vel, est error nullam dictas ne. Debet instructior ea pri, vis singulis antiopam consulatu ex.</p>
+														<a class="comment-reply-link post-a" href="#"><i class="fa fa-comment"></i><strong>Reply</strong></a>
+														<span class="post-a"><i class="fa fa-calendar-o"></i> May 2, 2014</span>
+													</div>
+												</div>
+											</li>
+										<!-- #comment-## -->
+										<!--</ol>
+										<div class="comments-pager"></div>
+
+										<div class="comment-form">
+											<a href="#" name="respond"></a>
+											<div id="respond" class="comment-respond">
+												<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/integer-nam-varius/#respond" style="display:none;">Cancel reply</a></small></h3>
+												<form action="http://chronicles.datcouch.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+													<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							
+													<p class="form-name">
+														<label for="author">Name:<span class="required">*</span></label>
+														<input id="author" name="author" type="text" value="" size="30" aria-required="true" placeholder="Name">
+													</p>
+
+													<p class="form-email">
+														<label for="email">Email:<span class="required">*</span></label>
+														<input id="email" name="email" type="text" value="" size="30" aria-required="true" placeholder="Email">
+													</p>
+
+													<p class="form-website">
+														<label for="website">Website:</label>
+														<input id="website" name="url" type="text" value="" size="30" aria-required="true" placeholder="Website">
+													</p>
+													<p class="form-comment">
+														<label for="comment">Comment:<span class="required">*</span></label>
+														<textarea id="comment" name="comment" type="text" aria-required="true" placeholder="Comment Text"></textarea>
+													</p>
+													<p class="form-submit">
+														<input name="submit" type="submit" id="submit" value="Post Comment" class="button">
+														<input type="hidden" name="comment_post_ID" value="324" id="comment_post_ID" class="button">
+														<input type="hidden" name="comment_parent" id="comment_parent" value="0" class="button">
+													</p>
+												</form>
+											</div><!-- #respond -->
+										<!--</div>
+						
+									</div>-->
+
+
+								<!-- END .content-padding -->
+								<!--</div>-->
+
+							<!-- END .profile-right-side -->
+							</div>
+
+							<div class="clear-float"></div>
+
+						<!-- END .user-profile -->
+						</div>
+
+					</div>
+					
+					<div class="clear-float"></div>
+					
+				</div>
+			</div>
+		</div>
+						
+
+		
+			
+		<div class="clear-float"></div>
+		
+		<div class="wrapper">
+			<!-- BEGIN .footer -->
+			<div class="footer">
+
+				<div class="footer-top"></div>
+				
+				<div class="footer-content">
+
+					<!-- BEGIN .panel -->
+					<div class="panel">
+						<!--<h2>MENU</h2>
+						<div class="top-right"><a href="#">View all</a></div>
+						<div class="panel-content">
+							
+							<div class="d-articles">
+								<div class="item">
+									<div class="item-header">
+										<a href="post.html"><img src="images/photos/image-96.jpg" alt="" /></a>
+									</div>
+									<div class="item-content">
+										<h4><a href="post.html">Fermentum hac consectetur</a></h4>
+										<p>Sagittis ut eleifend taciti eleifend, mauris primis...</p>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-header">
+										<a href="post.html"><img src="images/photos/image-97.jpg" alt="" /></a>
+									</div>
+									<div class="item-content">
+										<h4><a href="post.html">Fermentum hac consectetur</a></h4>
+										<p>Sagittis ut eleifend taciti eleifend, mauris primis...</p>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-header">
+										<a href="post.html"><img src="images/photos/image-98.jpg" alt="" /></a>
+									</div>
+									<div class="item-content">
+										<h4><a href="post.html">Fermentum hac consectetur</a></h4>
+										<p>Sagiaaasttis ut eleifend taciti eleifend, mauris primis...</p>
+									</div>
+								</div>
+							</div>
+							
+						</div>-->
+					<!-- END .panel -->
+					</div>
+						
+					<!-- BEGIN .panel -->
+					<div class="panel">
+						<!--<h2>Contact Information</h2>
+						<div class="panel-content">
+							
+							<div>
+								<h4>What do we stand for ?</h4>
+								<p>Soleat aperiam ex pri, at pericula constituam efficiantu per, voluptaria intellegam eu nec. Duo modus homero vivendum an, facete timeam ne eum.</p>
+
+								<a href="mailto:revelio@oursite.com" class="icon-line">
+									<i class="fa fa-comment"></i><span>revelio@oursite.com</span>
+								</a>
+			
+								<span class="icon-line">
+									<i class="fa fa-map-marker"></i><span>949 West Grassland Drive, UT 84003</span>
+								</span>
+			
+							</div>
+							
+						</div>-->
+					<!-- END .panel -->
+					</div>
+					
+					<!-- BEGIN .panel -->
+					<div class="panel">
+						<!--<h2>Tag Cloud</h2>
+						<div class="panel-content">
+							
+							<div class="tagcloud">
+								<a href="#">sapien</a><a href="#">scelerisque</a><a href="#">sed</a><a href="#">sem</a><a href="#">senectus</a><a href="#">sit</a><a href="#">sodales</a><a href="#">sollicitudin</a><a href="#">tellus</a><a href="#">tempus</a><a href="#">tincidunt</a><a href="#">tristique</a><a href="#">ullamcorper</a><a href="#">urna</a><a href="#">ut</a><a href="#">varius</a><a href="#">vel</a><a href="#">vivamus</a><a href="#">viverra</a><a href="#">volutpat</a>
+							</div>
+							
+						</div>-->
+					<!-- END .panel -->
+					</div>
+
+				</div>
+
+				<div class="footer-bottom">
+					<div style="color: #fff" class="left">&copy; Copyright 2018-2019 <strong>Simracing Valley</strong></div>
+					<div class="right">
+						<ul>
+							<!--<li><a href="#">Homepage</a></li>-->
+							
+						</ul>
+					</div>
+					<div class="clear-float"></div>
+				</div>
+			<!-- END .footer -->
+			</div>
+		</div>
+		<script type='text/javascript' src='../static/js/jquery.min.js'></script>
+		<script type='text/javascript' src='../static/js//modernizr.custom.50878.js'></script>
+		<script type='text/javascript' src='../static/js/iscroll.js'></script>
+		<script type='text/javascript' src='../static/js/dat-menu.js'></script>
+		<script type='text/javascript'>
+			var strike_autostart = false;
+		</script>
+		<script type='text/javascript' src='../static/js/theme-script.js'></script>
+		
+		
+		<script> 
+		//POPUP JQUERY!!
+		$(function() {
+		//----- OPEN
+		$('[data-popup-open]').on('click', function(e) {
+		var targeted_popup_class = jQuery(this).attr('data-popup-open');
+		$('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+		e.preventDefault();
+		});
+		//----- CLOSE
+		$('[data-popup-close]').on('click', function(e) {
+		var targeted_popup_class = jQuery(this).attr('data-popup-close');
+		$('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+		e.preventDefault();
+		});
+		});
+		</script>
+		
+
+
+		<script>
+   var rankposData = {
+   labels : [{% for item in ranklabels %}
+                  "{{item}}",
+              {% endfor %}],
+   datasets : [
+      {
+            label: 'Posição Geral no Rank',
+            backgroundColor: 'rgba(0,153,255,0.2)',
+            borderColor: "rgba(0,153,255,1)",
+            strokeColor: "rgba(0,153,255,1)",
+            pointColor: "rgba(0,153,255,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(0,153,255,1)",
+            bezierCurve : false,
+            data : [{% for item in rankposition %}
+                      {% if item == 0 %}
+            			null,
+            		{% else %}
+                      {{item}},
+            		{% endif %}
+                    {% endfor %}]
+      },
+      {
+            label: 'Posição Sazonal no Rank',
+            backgroundColor: 'rgba(0,51,153,0.2)',
+            borderColor: "rgba(0,51,153,1)",
+            strokeColor: "rgba(0,51,153,1)",
+            pointColor: "rgba(0,51,153,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(0,51,153,1)",
+            bezierCurve : false,
+            data : [{% for item in seasonrankposition %}
+            		{% if item == 0 %}
+            		null,
+            		{% else %}
+                      {{item}},
+            		{% endif %}
+                    {% endfor %}]
+      }
+     ]
+   };
+   //console.log(rankposData.datasets[0].data)
+   // get bar chart canvas
+   var myfourthchart = document.getElementById("chart4").getContext("2d");
+   
+   function getMaxOfArray(numArray) {
+    return Math.max.apply(null, numArray);
+	};
+
+	function getMinOfArray(numArray) {
+    return Math.min.apply(null, numArray);
+	};
+
+   steps = 10
+   max = 10
+   // draw bar chart
+   var LineChartDemo = new Chart(myfourthchart, {
+        type: 'line',
+        data: rankposData,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        },
+        scales: {
+            yAxes : [{
+                ticks : {       
+                     reverse: true,
+                     stepSize: 1,
+                     min: getMinOfArray(
+                     		[getMinOfArray(rankposData.datasets[0].data.filter(function(val) {return val !== null})),
+                     		 getMinOfArray(rankposData.datasets[1].data.filter(function(val) {return val !== null}))]) - 1,
+                     max: getMaxOfArray([getMaxOfArray(rankposData.datasets[0].data), getMaxOfArray(rankposData.datasets[1].data)]) + 1
+
+                }
+            }],
+        }
+      },
+          
+     });
+ 
+   
+
+
+   var ratingData = {
+   labels : [{% for item in ratinglabels %}
+                  "{{item}}",
+              {% endfor %}],
+   datasets : [
+      {
+            label: 'Histórico Geral de Pontos',
+            backgroundColor: 'rgba(151,187,205,0.2)',
+            borderColor: "rgba(0,0,160,0.5)",
+            strokeColor: "rgba(19,156,225,1)",
+            pointColor: "rgba(19,156,225,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in ratingvalues %}
+                      {{item}},
+                    {% endfor %}]
+      },
+      {
+            label: 'Extensão Geral de Pontos',
+            backgroundColor: 'rgba(151,187,205,0.2)',
+            borderColor: "rgba(0,130,130,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in ratingrange %}
+                      {{item}},
+                    {% endfor %}]
+      },
+      {
+            label: 'Histórico de Pontos Sazonal',
+            backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            borderColor: "rgba(0,0,0,1)",
+            strokeColor: "rgba(0,0,0,1)",
+            pointColor: "rgba(0,0,0,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(0,0,0,1)",
+            bezierCurve : false,
+            data : [{% for item in seasonratingvalues %}
+                      {{item}},
+                    {% endfor %}]
+      },
+      {
+            label: 'Extensão Sazonal de Pontos',
+            backgroundColor: 'rgba(255, 0, 0, 0.2)',
+            borderColor: "rgba(255,0,0,1)",
+            strokeColor: "rgba(255,0,0,1)",
+            pointColor: "rgba(255,0,0,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(255,0,0,1)",
+            bezierCurve : false,
+            data : [{% for item in seasonratingrange %}
+                      {{item}},
+                    {% endfor %}]
+      }]
+   }
+ 
+   // get bar chart canvas
+   var mychart = document.getElementById("chart1").getContext("2d");
+   
+   steps = 10
+   max = 10
+   // draw bar chart
+   var LineChartDemo = new Chart(mychart, {
+        type: 'line',
+        data: ratingData,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        },
+        
+      },
+          
+     });
+
+
+// bar chart data
+   var incidentData = {
+   labels : [{% for item in incidentlabels %}
+                  "{{item}}",
+              {% endfor %}],
+   datasets : [
+      {
+            label: 'Média Incidentes a cada 5 corridas',
+            backgroundColor: 'rgba(255, 0, 0, 0.3)',
+            borderColor: "rgba(255,0,0,0.3)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in incidentaverage %}
+                      {{item}},
+                    {% endfor %}] 
+
+      },
+      {
+      		label: 'Incidente por corrida',
+            backgroundColor: 'rgba(58, 84, 211, 0.2)',
+            borderColor: "rgba(58,84,211,0.8)",
+            strokeColor: "rgba(58,84,211,1)",
+            pointColor: "rgba(58,84,211,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(58,84,211,1)",
+            bezierCurve : false,
+            data : [{% for item in incidentvalues %}
+                      {{item}},
+                    {% endfor %}] 
+      }
+
+      ]
+   }
+
+    Chart.defaults.global.animationSteps = 50;
+    Chart.defaults.global.tooltipYPadding = 16;
+    Chart.defaults.global.tooltipCornerRadius = 0;
+    Chart.defaults.global.tooltipTitleFontStyle = "normal";
+    Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+    Chart.defaults.global.animationEasing = "easeOutBounce";
+    Chart.defaults.global.responsive = true;
+    Chart.defaults.global.scaleLineColor = "black";
+    Chart.defaults.global.scaleFontSize = 16;
+ 
+   // get bar chart canvas
+   var mysecondchart = document.getElementById("chart2").getContext("2d");
+   
+   steps = 10
+   max = 10
+   // draw bar chart
+   var LineChartDemo = new Chart(mysecondchart, {
+        type: 'line',
+        data: incidentData,
+        scaleOverride: true,
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        }
+      }
+ 
+   });
+
+   var top10Data = {
+   labels : ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', 'Poles'],
+   datasets : [
+      {
+            label: 'TOP 10 & Poles Gerais',
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            borderColor: "rgba(120,36,216,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in top10list %}
+                      {{item}},
+                    {% endfor %}] 
+
+      },
+      {
+            label: 'TOP 10 & Poles Sazonal',
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            borderColor: "rgba(23,102,19,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in seasontop10list %}
+                      {{item}},
+                    {% endfor %}] 
+
+      }]
+   }
+ //console.log(top10Data)
+ 
+ var mythirdchart = document.getElementById("chart3").getContext("2d");
+
+ var LineChartDemo = new Chart(mythirdchart, {
+        type: 'radar',
+        data: top10Data,
+        scaleOverride: true,                                                                                                                                                                                                                                 
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+        options: {
+          chartArea: {
+          backgroundColor: 'rgba(251, 85, 85, 0.4)'
+        }
+      }
+ 
+   });
+    </script>
+	</body>
+</html>
+

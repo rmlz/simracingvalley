@@ -1,0 +1,103 @@
+<!-- BEGIN #top-layer -->
+		<div id="top-layer">
+			<div id="header-top">
+				
+				<div class="wrapper">
+					<ul class="right">
+						<li><a href="https://www.facebook.com/simracingvalley/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+						<!--<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-twitch"></i></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-steam"></i></a></li>-->
+					</ul>
+					<ul class="load-responsive" rel="Top menu">
+						<li><a href="{{ url_for('showDriverList') }}">Ranking</a></li>
+						
+						
+						<!--<li><a href="#drop-the-bass">Read Later<small>2</small></a>
+							<div class="drop">
+								<div class="notify-header">Articles I should to read later</div>
+								<!-- <div class="nofify-empty">
+									<i class="fa fa-folder-open-o"></i>
+									<b>No articles here yet</b>
+									<span>You can save articles to read them later</span>
+								</div> 
+								<ol class="notify-list">
+									<li>
+										<a href="post.html" class="notify-content">
+											<span class="article-thumb"><img src="images/photos/image-35.jpg" alt="" /></span>
+											<span class="notify-head">
+												<span class="notify-user"><b>Lorem Ipsum</b></span>
+											</span>
+											<span class="notify-text">Facete eruditi an vis, vel utamur aliquid partiendo ex</span>
+											<span class="notify-date">11:22, Sep 11, 2012</span>
+										</a>
+									</li>
+									<li>
+										<a href="post.html" class="notify-content">
+											<span class="article-thumb"><img src="images/photos/image-36.jpg" alt="" /></span>
+											<span class="notify-head">
+												<span class="notify-user"><b>Lorem Ipsum 2</b></span>
+											</span>
+											<span class="notify-text">Te deserunt eleifend usu, patrioque eloquentiam qui in</span>
+											<span class="notify-date">11:22, Sep 11, 2012</span>
+										</a>
+									</li>
+								</ol>
+								<div class="notify-footer"><a href="#clear-read-later">Clear this list</a></div>
+							</div>
+						</li>-->
+						<li><a href="{{ url_for('driver', userid=current_user.get_id()) }}">{{ current_user.get_username() }}</a></li>
+						<li><a href="{{ url_for('logout') }}">SAIR</a></li>
+					</ul>
+				</div>
+			</div>
+			<section id="content">
+				<header id="header" class="needsmallpadding">
+					<div id="menu-bottom">
+						<!-- <nav id="menu" class="main-menu width-fluid"> -->
+						<nav id="menu" class="main-menu">
+							<div class="blur-before"></div>
+							<a href="index.html" class="header-logo left"><img src="../static/images/logo-white.png" class="logo" alt="Revelio" title="" /></a>
+							<a href="#dat-menu" class="datmenu-prompt"><i class="fa fa-bars"></i>Menu</a>
+							<ul class="load-responsive" rel="Main menu">
+								<li><a href="#"><span><i class="fa fa-car"></i><strong>CORRIDAS</strong></span></a>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="#" data-popup-open="popup-3"> Inscreva-se para um Evento</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><span><i class="fa fa-calendar-o"></i><strong>Agenda</strong></span></a>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="#">Em construção</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><span><i class="fa fa-th-list"></i><strong>Resultados</strong></span></a>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="#" data-popup-open="popup-4"> Extra Oficiais</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><i class="fa fa-trophy"></i><strong>Ligas e Copas</strong></a></li>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="#">Em construção</a></li>
+									</ul>
+								<li><a href="#"><span><i class="fa fa-comments-o"></i><strong>Discord & Facebook</strong></span></a>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="https://www.facebook.com/groups/302431040496313/">Grupo no Facebook</a></li>
+										<div style="border: 1px solid;"></div>
+										<div><iframe src="https://discordapp.com/widget?id=352886807647748106&theme=dark" width="240" height="500" allowtransparency="true" frameborder="0"></iframe></div>
+										
+										
+									</ul>
+								</li>
+								<li><a href="#"><span><i class="fa fa-users"></i><strong>Equipes</strong></span></a>
+									<ul class="sub-menu" style="background: darkred;">
+										<li><a href="#">Minha Equipe (Em construção)</a></li>
+										<li><a href="user-single.html">Equipes (Em construção)</a></li>
+									</ul>
+								</li>
+								<!-- <li class="no-icon"><a href="#"><strong>Without icon</strong></a></li> -->
+							</ul>
+						</nav>
+						
+					</div>
+				</header>
