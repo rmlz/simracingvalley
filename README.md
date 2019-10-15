@@ -152,27 +152,27 @@ to everyone which wants to study or implement the code inside their own projects
 I'm a Python student that have been trying to create useful scripts for the Simracing Community. 
 Also I may thanks all the people that helped me to develop the Simracing Valley Community:
 
-Alisson Zanoni
-Aparicio Felix Neto
-Aurea Barros
-Carlos Eduardo Pinto
-Celso Pedri
-Cesar Louro
-Fabio Krek
-Fernando Bueno
-Glenio Lobo
-Gracas Barros
-Gustavo Pinto
-Hernani Klehm
-Iovan Lima
-Maikon Sulivan
-Matheus Manarim
-Nicolas Sanchez Ernest
-Pedro Phelipe Porto
-Rodrigo Lepri
-Rodrigo Vicente
-Tadeu Costa
-Tayane Campos
+* Alisson Zanoni
+* Aparicio Felix Neto
+* Aurea Barros
+* Carlos Eduardo Pinto
+* Celso Pedri
+* Cesar Louro
+* Fabio Krek
+* Fernando Bueno
+* Glenio Lobo
+* Gracas Barros
+* Gustavo Pinto
+* Hernani Klehm
+* Iovan Lima
+* Maikon Sulivan
+* Matheus Manarim
+* Nicolas Sanchez Ernest
+* Pedro Phelipe Porto
+* Rodrigo Lepri
+* Rodrigo Vicente
+* Tadeu Costa
+* Tayane Campos
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
