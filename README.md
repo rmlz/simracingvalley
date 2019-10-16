@@ -93,7 +93,7 @@ To access a fake admin account use:
 * Accounts are STEAM-linked;
 * Ranking;
 * Races logs and records;
-* Driver's evolution through season;
+* Driver's evolution plots through season;
 * Dedicated server menagement from website;
 * Safe storage of personal data (encryption!);
 
@@ -111,7 +111,7 @@ To access a fake admin account use:
 
 ### Prerequisites
 
-Development skills and the will of learning Python-Flask
+Coding skills (Python3) and the will of learning Python-Flask.
 
 ### Installation
  
@@ -125,6 +125,17 @@ git clone https:://github.com/your_username_/Project-Name.git
 5. Zip the cloned folder and upload it to AWS.
 6. Access your new website.
 
+
+## Usage
+**I'm not writing a full documentation. So, this is just some important *insights* that may help to start your project site and run the files in your server computer.**
+
+* Use PIP to install the requirements.txt file in the Dedicated Server (it can be your Personal Computer).
+* Run the **servercontrolv3.py** file and keep it running 24h/d if you want the AMS Dedicated Server to be opened automatically anytime of the day.
+* The online website contains formularies to schedule race on the database. The data is used to Start the server and Finish it on the right time so other races can keep their scheduled time.
+* You can't run multiple servers at a time using the **servercontrolv3.py**.
+* Edit the demo website and the API **application.py** on your needs. 
+* A mongodb database must be created, and it's strongly recommended to use the [Atlas Mongo DB](https://www.mongodb.com/cloud/atlas) free service to start your database.
+* **If you have any plausible dificulties (related to the lack of documentation), don't be ashamed and [OPEN AN ISSUE](https://github.com/rmlz/simracingvalley/issues)!**
 <!-- CONTRIBUTING -->
 ## Contributing
 
