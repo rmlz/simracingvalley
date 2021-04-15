@@ -119,7 +119,7 @@ Coding skills (Python3) and the will of learning Python-Flask.
 2. Open a new server.
 3. Download or clone this git to your computer
 ```sh
-git clone https:://github.com/your_username_/Project-Name.git
+git clone https://github.com/rmlz/simracingvalley.git
 ```
 4. Move the servercontrol.py file to your Dedicated Server folder 
 5. Zip the cloned folder and upload it to AWS.
